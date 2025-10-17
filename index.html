@@ -4,254 +4,515 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Betty Chen Portfolio</title>
+  <title>Betty Chen - Product Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     /* 全局樣式 */
-    body {
-      font-family: Arial, sans-serif;
+    * {
       margin: 0;
       padding: 0;
-      background-color: #fdfdfd;
-      color: #333;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background-color: #ffffff;
+      color: #333333;
       line-height: 1.6;
+      font-size: 16px;
     }
 
-    header {
-      background: linear-gradient(135deg, #666666, #999999);
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
+    /* Header Navigation */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: #ffffff;
+      border-bottom: 1px solid #f0f0f0;
+      z-index: 1000;
+      padding: 20px 40px;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 3em;
-    }
-
-    header p {
-      margin-top: 15px;
-      font-size: 1.2em;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    main {
-      padding: 60px 20px;
-      max-width: 1100px;
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
       margin: 0 auto;
     }
 
-    .intro h2 {
-      font-size: 2.2em;
-      margin: 0 0 10px;
+    .logo {
+      width: 40px;
+      height: 40px;
+      background-color: #e0e0e0;
+      border-radius: 50%;
     }
 
-    .intro p {
-      max-width: 760px;
-      color: #444;
-      margin: 0 0 30px;
+    .nav-links {
+      display: flex;
+      gap: 30px;
     }
 
+    .nav-links a {
+      color: #333333;
+      text-decoration: none;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #666666;
+    }
+
+    /* Main Content */
+    .main-content {
+      margin-top: 80px;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 40px;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 80px 0 120px 0;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: #333333;
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+
+    .hero .subtitle {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #333333;
+      margin-bottom: 30px;
+    }
+
+    .hero .description {
+      font-size: 1.1rem;
+      color: #555555;
+      max-width: 600px;
+      line-height: 1.7;
+    }
+
+    /* Section Titles */
     .section-title {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #888888;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-size: 0.85em;
-      color: #888;
-      margin: 30px 0 10px;
+      letter-spacing: 1px;
+      margin: 80px 0 40px 0;
     }
 
-    /* Featured Projects - 文字左邊，圖片右邊 */
-    .project-row {
+    /* Featured Projects */
+    .featured-projects {
+      margin-bottom: 80px;
+    }
+
+    .project {
       display: grid;
       grid-template-columns: 1.2fr 1fr;
-      gap: 28px;
+      gap: 60px;
       align-items: center;
-      margin: 36px 0 64px;
+      margin-bottom: 80px;
+    }
+
+    .project:last-child {
+      margin-bottom: 0;
     }
 
     .project-text h3 {
-      margin: 0 0 8px;
-      font-size: 1.25em;
-      color: #111;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #333333;
+      margin-bottom: 15px;
     }
 
     .project-text p {
-      margin: 0;
-      color: #555;
+      font-size: 1rem;
+      color: #555555;
+      margin-bottom: 15px;
+      line-height: 1.6;
     }
 
-    .project-meta {
-      margin-top: 10px;
-      font-size: 0.85em;
-      color: #777;
+    .project-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
     }
 
-    .project-media img {
-      display: block;
+    .project-tag {
+      font-size: 0.9rem;
+      color: #555555;
+      background-color: #EBEEF5;
+      padding: 4px 8px;
+      border-radius: 4px;
+      display: inline-block;
+    }
+
+    .project-image img {
       width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 8px 22px rgba(0,0,0,0.08);
-      object-fit: cover;
-      height: 260px;
-      background: #eee;
     }
 
     /* Side Projects */
+    .side-projects {
+      margin-bottom: 80px;
+    }
+
     .side-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      margin-top: 16px;
+      gap: 20px;
+      margin-top: 30px;
     }
 
     .side-card {
-      position: relative;
-      height: 140px;
-      border-radius: 12px;
       overflow: hidden;
-      background: #dbe1e6;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      text-align: center;
+      transition: transform 0.3s ease;
     }
 
-    .side-card span {
-      position: relative;
-      z-index: 1;
-      font-weight: bold;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    .side-card:hover {
+      transform: translateY(-2px);
     }
 
-    .side-card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(0,0,0,0.2), rgba(0,0,0,0.35));
+    .side-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
     }
 
-    .side-card.img1 { background: url('img/project1.png') center/cover no-repeat; }
-    .side-card.img2 { background: url('img/project2.png') center/cover no-repeat; }
-    .side-card.img3 { background: url('img/project3.png') center/cover no-repeat; }
-
-    /* Contact */
-    .contact {
-      text-align: center;
-      margin-top: 70px;
+    .side-card-content {
+      padding: 20px;
     }
 
-    .contact h3 {
-      margin: 0 0 10px;
+    .side-card h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #333333;
+      margin-bottom: 10px;
     }
 
-    footer {
-      text-align: center;
-      padding: 25px;
-      background-color: #f2f2f2;
-      margin-top: 60px;
-      font-size: 0.9em;
-      color: #555;
+    .side-card p {
+      font-size: 0.9rem;
+      color: #555555;
+      margin-bottom: 10px;
+      line-height: 1.5;
     }
 
-    a {
-      color: #4CAF50;
+    .side-card .tag {
+      font-size: 0.8rem;
+      color: #888888;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #f8f8f8;
+      padding: 60px 40px 40px 40px;
+      margin-top: 100px;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .footer-left h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #333333;
+      margin-bottom: 10px;
+    }
+
+    .footer-left p {
+      color: #555555;
+      margin-bottom: 20px;
+    }
+
+    .footer-left .copyright {
+      font-size: 0.9rem;
+      color: #888888;
+    }
+
+    .footer-right {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .footer-section h4 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #888888;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section li {
+      margin-bottom: 8px;
+    }
+
+    .footer-section a {
+      color: #333333;
       text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.3s ease;
     }
 
-    a:hover {
-      text-decoration: underline;
+    .footer-section a:hover {
+      color: #666666;
     }
 
-    /* RWD */
-    @media (max-width: 860px) {
-      .project-row,
-      .project-row.reverse {
-        grid-template-columns: 1fr;
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .main-content {
+        padding: 0 30px;
       }
-      .project-media img {
-        height: 220px;
+      
+      .hero h1 {
+        font-size: 3rem;
+      }
+      
+      .hero .subtitle {
+        font-size: 1.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header {
+        padding: 15px 20px;
+      }
+      
+      .nav-container {
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      .nav-links {
+        gap: 20px;
+      }
+      
+      .main-content {
+        margin-top: 120px;
+        padding: 0 20px;
+      }
+      
+      .hero {
+        padding: 40px 0 80px 0;
+      }
+      
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero .subtitle {
+        font-size: 1.3rem;
+      }
+      
+      .project {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      
+      .side-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      
+      .footer-right {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .hero .subtitle {
+        font-size: 1.1rem;
+      }
+      
+      .project-text h3 {
+        font-size: 1.2rem;
       }
     }
   </style>
 </head>
 <body>
-  <!-- Hero 區 -->
-  <header>
-    <h1>Betty Chen 3</h1>
-    <p>UX/UI Designer | R&D & Project Management | Exploring every possibility with design & innovation</p>
+  <!-- Header Navigation -->
+  <header class="header">
+    <div class="nav-container">
+      <div class="logo"></div>
+      <nav class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <!-- Intro 區 -->
-    <section class="intro">
-      <h2>Projects</h2>
-      <p>As a product designer, I collaborate with cross-functional teams to deliver exceptional user experiences through user-centered design and continuous improvement. Below are selected works and explorations.</p>
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1>Hello, I'm Betty Chen.</h1>
+      <div class="subtitle">Product Designer</div>
+      <p class="description">
+        With experience in R&D, PM, and design leadership, I work across IoT, SaaS, and hardware-software integration. 
+        I'm passionate about simplifying complexity and driving impact through thoughtful design.
+      </p>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section class="featured-projects">
       <div class="section-title">Featured Projects</div>
+      
+      <div class="project">
+        <div class="project-text">
+          <h3>Flexible Booking Dates</h3>
+          <p>Designing specific date selection for itinerary bookings</p>
+          <div class="project-tags">
+            <span class="project-tag">Feature Optimization</span>
+            <span class="project-tag">SaaS</span>
+            <span class="project-tag">B2B2C</span>
+          </div>
+        </div>
+        <div class="project-image">
+          <img src="img/project1.png" alt="Flexible Booking Dates">
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-text">
+          <h3>Router Web GUI</h3>
+          <p>Made advanced router settings simple and visually accessible.</p>
+          <div class="project-tags">
+            <span class="project-tag">ReDesign</span>
+            <span class="project-tag">Web GUI</span>
+            <span class="project-tag">B2C</span>
+          </div>
+        </div>
+        <div class="project-image">
+          <img src="img/project2.png" alt="Router Web GUI">
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-text">
+          <h3>Mydlink Home App</h3>
+          <p>Unified all D-Link devices into one app. Enabled a seamless smart home experience.</p>
+          <div class="project-tags">
+            <span class="project-tag">New Project</span>
+            <span class="project-tag">IoT</span>
+            <span class="project-tag">B2C</span>
+          </div>
+        </div>
+        <div class="project-image">
+          <img src="img/project3.png" alt="Mydlink Home App">
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-text">
+          <h3>GoFace</h3>
+          <p>AI-Powered Staff Management Solution</p>
+          <div class="project-tags">
+            <span class="project-tag">New Project</span>
+            <span class="project-tag">SaaS</span>
+            <span class="project-tag">B2B2C</span>
+          </div>
+        </div>
+        <div class="project-image">
+          <img src="img/project4.png" alt="GoFace">
+        </div>
+      </div>
     </section>
 
-    <!-- Featured Projects：交錯版型 -->
-    <section>
-      <div class="project-row">
-        <div class="project-text">
-          <h3>Rezio Sandbox — 特定日期設定</h3>
-          <p>優化行程預定流程中的特定日期設定 UI，提升可發現性與操作效率。</p>
-          <div class="project-meta">角色：Product Designer · 領域：旅遊電商 · 2024</div>
-        </div>
-        <div class="project-media">
-          <img src="img/project1.png" alt="Rezio Sandbox feature">
-        </div>
-      </div>
-
-      <div class="project-row">
-        <div class="project-text">
-          <h3>Vibe Coding — 抽獎機設計</h3>
-          <p>以 AI prompt → 生成 → 實作的流程，建立可運營的抽獎互動元件，整合前後端。</p>
-          <div class="project-meta">角色：UX/UI Designer · 領域：開發者工具 · 2023</div>
-        </div>
-        <div class="project-media">
-          <img src="img/project2.png" alt="Vibe Coding Lottery UI">
-        </div>
-      </div>
-
-      <div class="project-row">
-        <div class="project-text">
-          <h3>更多作品 Coming Soon</h3>
-          <p>持續整理上架中，包含 IoT 與電商相關專案，敬請期待。</p>
-          <div class="project-meta">Side projects & client works</div>
-        </div>
-        <div class="project-media">
-          <img src="img/project3.png" alt="Coming soon thumbnails">
-        </div>
-      </div>
-    </section>
-
-    <!-- Side Projects 區 -->
-    <section>
+    <!-- Side Projects Section -->
+    <section class="side-projects">
       <div class="section-title">Side Projects</div>
       <div class="side-grid">
-        <div class="side-card img1"><span>Oisee</span></div>
-        <div class="side-card img2"><span>Uchronia</span></div>
-        <div class="side-card img3"><span>Our Island</span></div>
-        <div class="side-card img1"><span>CSS Drawings</span></div>
-        <div class="side-card img2"><span>Gov Grants</span></div>
-        <div class="side-card img3"><span>Low-Poly Series</span></div>
+        <div class="side-card">
+          <img src="img/SP_img1.png" alt="Lucky Draw">
+          <div class="side-card-content">
+            <h4>Lucky Draw 抽獎機設計</h4>
+            <p>從一個尾牙抽獎活動,到暢銷App,到下一間公司的為尾牙抽獎活動</p>
+            <div class="tag"># App</div>
+          </div>
+        </div>
+        
+        <div class="side-card">
+          <img src="img/SP_img2.png" alt="Vendor Interview">
+          <div class="side-card-content">
+            <h4>供應商訪談</h4>
+            <p>從一個尾牙抽獎活動,到暢銷App,到下一間公司的為尾牙抽獎活動</p>
+            <div class="tag"># User Interview</div>
+          </div>
+        </div>
+        
+        <div class="side-card">
+          <img src="img/SP_img3.png" alt="Function Sharing">
+          <div class="side-card-content">
+            <h4>職能分享</h4>
+            <p>從一個尾牙抽獎活動,到暢銷App,到下一間公司的為尾牙抽獎活動</p>
+            <div class="tag"># Domain Sharing</div>
+          </div>
+        </div>
       </div>
     </section>
+  </div>
 
-    <!-- Contact 區 -->
-    <section class="contact">
-      <h3>Let's Connect!</h3>
-      <p>Feel free to reach out for collaborations or just a friendly hello 🙂</p>
-      <p><a href="mailto:betty@example.com">betty@example.com</a></p>
-    </section>
-  </main>
-
-  <!-- Footer 區 -->
-  <footer>
-    © 2025 Betty Chen | <a href="mailto:betty@example.com">betty@example.com</a>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-left">
+        <h3>thanks for stopping by, let's chat!</h3>
+        <p>I'd love to meet you :)</p>
+        <div class="copyright">© 2025 Betty Chen</div>
+      </div>
+      
+      <div class="footer-right">
+        <div class="footer-section">
+          <h4>Contact Me</h4>
+          <ul>
+            <li><a href="mailto:betty@example.com">Email</a></li>
+            <li><a href="https://linkedin.com/in/bettychen">LinkedIn</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#resume">Resume</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </footer>
 </body>
 </html>
