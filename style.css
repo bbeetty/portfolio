@@ -156,23 +156,29 @@ a {
 }
 
 .project-tags {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
+  display: inline;
+  color: #AAAAAA;
+  font-size: 0.95rem;
 }
 
 .project-tag {
-  font-size: 0.9rem;
-  color: #555555;
-  background-color: #EBEEF5;
-  padding: 4px 8px;
-  border-radius: 4px;
-  display: inline-block;
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  color: inherit;
+}
+
+.project-tag + .project-tag::before {
+  content: " \2022 "; /* bullet */
+  margin: 0 6px;
+  color: inherit;
 }
 
 .project-link {
   display: block;
   color: inherit;
+  margin-bottom: 80px;
 }
 
 .project-image img {
@@ -369,4 +375,3 @@ a {
     font-size: 1.2rem;
   }
 }
-

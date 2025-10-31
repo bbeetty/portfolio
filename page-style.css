@@ -1,0 +1,162 @@
+/* Page Styles */
+.hero .page-title {
+  color: #000000;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 40px;
+  align-items: start;
+  margin-top: 24px;
+}
+
+.hero-image-wrapper {
+  width: 100%;
+}
+
+.hero-image-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero-copy-box {
+  background-color: #CFE6FF;
+  padding: 24px;
+  margin-top: 0;
+}
+
+.hero-copy-box p {
+  color: #333333;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Page Styles Responsive */
+@media (max-width: 1024px) {
+  .hero-content {
+    gap: 30px;
+  }
+  
+  .hero-copy-box {
+    padding: 20px;
+  }
+  
+  .hero-copy-box p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-top: 40px;
+  }
+  
+  .hero-copy-box {
+    padding: 20px;
+  }
+  
+  .hero-copy-box p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content {
+    gap: 24px;
+    margin-top: 32px;
+  }
+  
+  .hero-copy-box {
+    padding: 16px;
+  }
+  
+  .hero-copy-box p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+}
+
+/* Hero Content Variant 2 */
+.hero-content2 {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 40px;
+  align-items: start;
+  margin-top: 60px;
+}
+
+.hero-image-wrapper2 {
+  width: 100%;
+}
+
+.hero-image-wrapper2 img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero-copy-box2 {
+  background-color: #CFE6FF;
+  padding: 24px;
+  margin-top: 0;
+}
+
+.hero-copy-box2 p {
+  color: #333333;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Hero Content Variant 2 Responsive */
+@media (max-width: 1024px) {
+  .hero-content2 {
+    gap: 30px;
+  }
+  
+  .hero-copy-box2 {
+    padding: 20px;
+  }
+  
+  .hero-copy-box2 p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content2 {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-top: 40px;
+  }
+  
+  .hero-copy-box2 {
+    padding: 20px;
+  }
+  
+  .hero-copy-box2 p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content2 {
+    gap: 24px;
+    margin-top: 32px;
+  }
+  
+  .hero-copy-box2 {
+    padding: 16px;
+  }
+  
+  .hero-copy-box2 p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+}
+
