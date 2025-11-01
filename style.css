@@ -84,7 +84,7 @@ a {
 
 /* Hero Section */
 .hero {
-  padding: 40px 0 40px 0;
+  padding: 64px 0 40px 0;
 }
 
 .hero h1,
@@ -118,7 +118,7 @@ a {
 .section-title {
   font-size: 0.85rem;
   font-weight: 600;
-  color: #888888;
+  color: #808080;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin: 80px 0 40px 0;

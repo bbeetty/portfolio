@@ -243,3 +243,57 @@
   }
 }
 
+/* Block A Section */
+.block-a {
+  display: grid;
+  grid-template-columns: 3fr 9fr;
+  gap: 40px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.block-a h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #000000;
+  margin: 0;
+}
+
+.block-a p {
+  font-size: 1rem;
+  color: #333333;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Block A Responsive */
+@media (max-width: 768px) {
+  .block-a {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 60px;
+  }
+  
+  .block-a h1 {
+    font-size: 1.3rem;
+  }
+  
+  .block-a p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .block-a {
+    margin-top: 40px;
+  }
+  
+  .block-a h1 {
+    font-size: 1.2rem;
+  }
+  
+  .block-a p {
+    font-size: 0.9rem;
+  }
+}
+
