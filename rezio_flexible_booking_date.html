@@ -94,10 +94,45 @@
 
     <!-- Block A Section -->
     <section class="block-a">
-      <h1>About the Project</h1>
-      <p>In the summer of 2025, my team gradually transitioned from a group of three to just myself.The two teammates I had originally assigned—who once brought fresh perspectives to improve long-standing pain points—left the project due to changes in their personal plans.<br>At that time, the project had reached the stage where the main features were completed and a new "Wish Feature" needed to be added.<br>
-        After taking over, I had to quickly familiarize myself with the newly established Design System, file structure, and hand-off process.<br>
-        Meanwhile, I needed to design a new type of setting feature under an incomplete Design System and optimize potential risks within the existing UI.</p>
+      <h1 class="block-a-title">About the Project</h1>
+      <div class="block-a-content">
+        <p>In the summer of 2025, my team gradually transitioned from a group of three to just myself.The two teammates I had originally assigned—who once brought fresh perspectives to improve long-standing pain points—left the project due to changes in their personal plans.<br>At that time, the project had reached the stage where the main features were completed and a new "Wish Feature" needed to be added.<br>
+          After taking over, I had to quickly familiarize myself with the newly established Design System, file structure, and hand-off process.<br>
+          Meanwhile, I needed to design a new type of setting feature under an incomplete Design System and optimize potential risks within the existing UI.</p>
+      </div>
+    </section>
+    <hr>
+    <section class="block-a">
+      <h1 class="block-a-title">Problem</h1>
+      <div class="block-a-content">
+        <p>Through user interviews with AMs and BDs, we learned how their clients configure dates using the current system. Many had to select numerous "excluded dates" just to achieve specific-date scheduling.</p>
+        <img src="img/rezio_problem_img.png" alt="Problem illustration">
+      </div>
+    </section>
+    <section class="block-a">
+      <h1 class="block-a-title">Challenge</h1>
+      <div class="block-a-content">
+        <p><strong>A. Handling Large Variations in Specific Dates</strong><br>
+          •  Specific dates vary widely—from 1–2 days for short events to 200+ days for year-round activities. The key design goal was to show all dates at a glance without clutter, while keeping pricing visible on the first screen.
+          <br>•  If "Specific Dates" must align with the original "Base Settings," pricing information can become confusing, requiring a review and redesign of the setting logic.</p>
+        <p><strong>B. Risk of Layout Breaks in Shared Components</strong><br>
+          The left-side "Special Pricing Menu" is a shared component. Known layout issues in multilingual contexts need to be considered.</p>
+        <p><strong>C. Complex Integration with Existing Setting Logic</strong><br>
+          The Design System's input error style may not be immediately visible or easily located within the "Price Settings" feature.</p>
+      </div>
+    </section>
+    <section class="block-a">
+      <h1 class="block-a-title">The process</h1>
+      <div class="block-a-content">
+        <ol>
+          <li>Specific dates visible at a glance</li>
+          <li>Intuitive and no learning curve</li>
+          <li>Color distinction without confusion</li>
+          <li>Limited height to keep pricing visible below</li>
+          <li>Display only one special price at a time</li>
+          <li>Error checks must remain visible and not be blocked</li>
+        </ol>
+      </div>
     </section>
     <hr>
   </div>
