@@ -365,7 +365,7 @@
 }
 
 .block-b .image-caption-block {
-  margin-top: 40px;
+  margin-top: 80px;
 }
 
 .block-b .image-caption-title {
@@ -433,12 +433,6 @@
   line-height: 1;
 }
 
-.block-b .design-x + p,
-.block-b .design-o + p {
-  height: calc(1rem * 1.7 * 3);
-  margin: 0;
-}
-
 /* Block B Responsive */
 @media (max-width: 768px) {
   .block-b {
@@ -460,38 +454,27 @@
   .block-b-title {
     font-size: 1.2rem;
   }
-  
 }
 
-/* col-4: 如果每个容器宽度 < 200px (总宽度 < 920px)，变成 col-3 */
-/* 4列 × 200px + 3 gap(40px×3) = 920px */
-@media (max-width: 920px) {
+/* Col responsive rules based on container width */
+/* col-4: 如果每个容器宽度 < 150px (总宽度 < 720px)，变成 col-3 */
+/* 4列 × 150px + 3 gaps(40px×3) = 600px + 120px = 720px */
+@media (max-width: 720px) {
   .block-b .col-4 {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-/* col-3: 如果每个容器宽度 < 300px (总宽度 < 980px)，变成 col-2 */
-/* 3列 × 300px + 2 gap(40px×2) = 980px */
-@media (max-width: 980px) {
+/* col-3: 如果每个容器宽度 < 200px (总宽度 < 680px)，变成 col-2 */
+/* 3列 × 200px + 2 gaps(40px×2) = 600px + 80px = 680px */
+@media (max-width: 680px) {
   .block-b .col-3 {
     grid-template-columns: repeat(2, 1fr);
   }
   
-  /* col-4 已经变成 3 列，如果仍然太窄(< 980px)，再变成 col-2 */
+  /* col-4 已经变成 col-3，如果仍然太窄，再变成 col-2 */
   .block-b .col-4 {
     grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* col-2: 如果每个容器宽度 < 250px (总宽度 < 540px)，变成 1 列 */
-/* 2列 × 250px + 1 gap(40px) = 540px */
-@media (max-width: 540px) {
-  .block-b .col-2,
-  .block-b .col-3,
-  .block-b .col-4 {
-    grid-template-columns: 1fr;
-    gap: 24px;
   }
 }
 
