@@ -248,8 +248,8 @@
   display: grid;
   grid-template-columns: 3fr 9fr;
   gap: 40px;
-  margin-top: 80px;
-  margin-bottom: 80px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 
@@ -280,8 +280,9 @@
 
 .block-a ol {
   list-style: decimal;
-  padding-left: 20px;
-  margin: 0;
+  padding-left: 0;
+  margin: 0 0 0 0;
+  list-style-position: inside;
 }
 
 .block-a li {
@@ -291,12 +292,22 @@
   margin-bottom: 8px;
   position: relative;
   padding-left: 0;
+  margin-left: 0;
+}
+
+.block-a ul li {
+  padding-left: 20px;
 }
 
 .block-a ul li::before {
   content: "•";
   position: absolute;
   left: 0;
+}
+
+.block-a ol li {
+  padding-left: 0px;
+  margin-left: 0;
 }
 
 .block-a img {
@@ -333,6 +344,122 @@
   
   .block-a p {
     font-size: 0.9rem;
+  }
+}
+
+/* Block B Section */
+.block-b {
+  margin-top: 40px;
+  margin-bottom: 0px;
+}
+
+.block-b-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #000000;
+  margin: 0 0 24px 0;
+}
+
+.block-b-content {
+  width: 100%;
+}
+
+.block-b .image-caption-block {
+  margin-top: 40px;
+}
+
+.block-b .image-caption-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #000000;
+  margin: 0 0 20px 0;
+}
+
+.block-b .image-caption-container {
+  display: grid;
+  gap: 40px;
+  width: 100%;
+}
+
+.block-b .col-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.block-b .col-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.block-b .col-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.block-b .image-caption-item {
+  width: 100%;
+}
+
+.block-b .image-caption-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.block-b .design-x {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+}
+
+.block-b .design-x::after {
+  content: "✕";
+  color: #ff0000;
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.block-b .design-o {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+}
+
+.block-b .design-o::after {
+  content: "✓";
+  color: #00ff00;
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+/* Block B Responsive */
+@media (max-width: 768px) {
+  .block-b {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+  
+  .block-b-title {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .block-b {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  
+  .block-b-title {
+    font-size: 1.2rem;
+  }
+  
+  .block-b .col-2,
+  .block-b .col-3,
+  .block-b .col-4 {
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
 }
 
