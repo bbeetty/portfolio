@@ -281,7 +281,7 @@
 .block-a ol {
   list-style: decimal;
   padding-left: 0;
-  margin: 0 0 0 0;
+  margin: 0 0 16px 0;
   list-style-position: inside;
 }
 
@@ -350,7 +350,7 @@
 /* Block B Section */
 .block-b {
   margin-top: 40px;
-  margin-bottom: 0px;
+  margin-bottom: 80px;
 }
 
 .block-b-title {
@@ -403,11 +403,20 @@
   display: block;
 }
 
+.block-a video,
+.block-a-content video {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 24px;
+}
+
 .block-b .design-x {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   font-weight: bold;
+  margin-bottom: 16px;
 }
 
 .block-b .design-x::after {
@@ -423,6 +432,7 @@
   align-items: center;
   gap: 8px;
   font-weight: bold;
+  margin-bottom: 16px;
 }
 
 .block-b .design-o::after {

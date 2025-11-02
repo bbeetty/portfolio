@@ -165,27 +165,111 @@
               <div class="image-caption-item">
                 <p class="design-x">Original version</p>
                 <p>In multi-language environments, long text strings often result in “...”.</p>
-                <img src="img/rezio_img_B-1.png" alt="A-1">
+                <img src="img/rezio_img_B-1.png" alt="B-1">
               </div>
               <div class="image-caption-item">
                 <p class="design-x">Design 1</p>
                 <p>Space savings are minimal, and the text display area remains insufficient.</p>
-                <img src="img/rezio_img_B-2.png" alt="A-2">
+                <img src="img/rezio_img_B-2.png" alt="B-2">
               </div>
               <div class="image-caption-item">
                 <p class="design-x">Design 2</p>
                 <p>The funnel icon may not be immediately understood by all users.</p>
-                <img src="img/rezio_img_B-3.png" alt="A-3">
+                <img src="img/rezio_img_B-3.png" alt="B-3">
               </div>
               <div class="image-caption-item">
                 <p class="design-o">Design 3</p>
                 <p>There is now more space to accommodate longer text strings.</p>
-                <img src="img/rezio_img_B-3.png" alt="A-3">
+                <img src="img/rezio_img_B-3.png" alt="B-3">
+              </div>
+            </div>
+        </div>
+        <div class="image-caption-block">
+          <h2 class="image-caption-title">C. Error states for the two types of pricing tables</h2>
+            <p class="design-o">Design 1</p>
+            <p>A temporary solution that follows the original Design System but adds a shared error message at the bottom left for better integration.</p><br>
+            <div class="image-caption-container col-2">
+              <div class="image-caption-item">
+                <img src="img/rezio_img_C-1-1.png" alt="C-1-1">
+              </div>
+              <div class="image-caption-item">
+                <img src="img/rezio_img_C-1-2.png" alt="C-1-2">
+              </div>
+            </div><br>
+            <p class="design-x">Design 2</p>
+            <p>Changed the error background from the input field to the entire row for better visibility, but with limited adaptability and a need to adjust the badge style.</p><br>
+            <div class="image-caption-container col-2">
+              <div class="image-caption-item">
+                <img src="img/rezio_img_C-2-1.png" alt="C-1-1">
+              </div>
+              <div class="image-caption-item">
+                <img src="img/rezio_img_C-2-2.png" alt="C-1-2">
+              </div>
+            </div><br>
+            <p class="design-x">Design 3</p>
+            <p>Only the input field background is marked with the error color, which avoids modifying the badge style but results in unclear visual semantics.</p><br>
+            <div class="image-caption-container col-2">
+              <div class="image-caption-item">
+                <img src="img/rezio_img_C-3-1.png" alt="C-1-1">
+              </div>
+              <div class="image-caption-item">
+                <img src="img/rezio_img_C-3-2.png" alt="C-1-2">
               </div>
             </div>
         </div>
       </div>
       
+    </section>
+    <hr>
+    <section class="block-a">
+      <h1 class="block-a-title">User Test</h1>
+      <div class="block-a-content">
+        <p>The sessions were jointly organized by the Design and PM teams, with members taking turns as moderators, observers, and summary facilitators.</p>
+        <ul>
+          <li>Four user test sessions were conducted based on job roles and departments: Pilot Test 1 (RD), Pilot Test 2 (PM), Formal Test 1 (AM), and Formal Test 2 (BO).</li>
+          <li>Participants and observers sat in pairs, while the moderator projected the test tasks to ensure everyone stayed synchronized and on schedule.</li>
+          <li>Each session was limited to one hour. After completing the tasks, the moderator and participants stayed to fill out the questionnaire.</li>
+          <li>Observers moved to another meeting room to discuss and consolidate their findings, then returned to the main room for a debrief led by the summary facilitator.</li>
+          <li>After the sessions, we used the SUS to evaluate usability and collaborated with the PMs to refine and adjust the features that needed improvement.</li>
+        </ul><br>
+        <img src="img/rezio_usertest.png" alt="user test photo">
+      </div>
+    </section>
+    <hr>
+    <section class="block-a">
+      <h1 class="block-a-title">The Final Design</h1>
+      <div class="block-a-content">
+          <p><strong>1. The text space for the Special Price menu has been expanded.</strong><br>
+          In the previous design, all special prices were shown at once and distinguished by color. The new design simplifies the view by displaying only the price that needs to be edited at the moment, resulting in a clearer and more focused user flow.</p>
+          <p><strong>2. Only display necessary information</strong><br>
+            Display a specific date badge when adding a special selling price</p>
+          <p><strong>3. Display one price date or session at a time</strong><br>
+            In the previous design, all special prices were shown at once and distinguished by color.</p>
+          <p><strong>4. The pricing table's design system underwent only minor adjustments</strong><br>
+            The input error style in the Design System remains unchanged, but the Field component now includes a new error style with red text displayed at the bottom left.</p>
+          <video id="final-design-video" controls width="100%" muted playsinline>
+            <source src="img/1_rezio_final_1.mov" type="video/quicktime">
+            Your browser does not support the video tag.
+          </video>
+          <script>
+            const video = document.getElementById('final-design-video');
+            const observer = new IntersectionObserver((entries) => {
+              entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                  video.play();
+                } else {
+                  video.pause();
+                }
+              });
+            }, {
+              threshold: 0.5
+            });
+            
+            if (video) {
+              observer.observe(video);
+            }
+          </script>
+      </div>
     </section>
   </div>
   
