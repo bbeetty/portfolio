@@ -488,3 +488,57 @@
   }
 }
 
+/* Circle Area */
+.circle-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 24px 0;
+}
+
+.circle-area .circle {
+  background-color: #4AD4FF;
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.circle-area .circle p {
+  color: #ffffff;
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin: 0;
+  font-weight: normal;
+}
+
+/* Circle Area Responsive */
+@media (max-width: 768px) {
+  .circle-area .circle {
+    width: 160px;
+    height: 160px;
+  }
+  
+  .circle-area .circle p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .circle-area .circle {
+    width: 140px;
+    height: 140px;
+    padding: 16px;
+  }
+  
+  .circle-area .circle p {
+    font-size: 0.8rem;
+  }
+}
+
