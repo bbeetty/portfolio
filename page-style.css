@@ -350,7 +350,7 @@
 /* Block B Section */
 .block-b {
   margin-top: 40px;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
 }
 
 .block-b-title {
@@ -365,7 +365,7 @@
 }
 
 .block-b .image-caption-block {
-  margin-top: 80px;
+  margin-top: 32px;
 }
 
 .block-b .image-caption-title {
@@ -401,6 +401,7 @@
   width: 100%;
   height: auto;
   display: block;
+  margin-bottom: 24px;
 }
 
 .block-a video,
