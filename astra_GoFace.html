@@ -90,6 +90,130 @@
         </div>
       </div>
     </section>
+     <!-- Block A Section -->
+     <section class="block-b">
+      <h1 class="block-b-title">About the Project</h1>
+      <div class="block-b-content">
+          <div class="image-caption-container col-2">
+            <div class="image-caption-item">
+              <p>This was my first experience working at a startup, developing a brand-new product from the ground up.
+                The idea originated from a casual conversation among several RD teammates, and after our manager and CEO recognized its potential, the project officially began.</p>
+              <p>As a designer, I needed to take on multiple roles and collaborate closely with a team of talented specialists.Throughout the journey, we faced challenges such as redefining direction, exploring customer needs, and testing business viability.
+                After many iterations, we finally arrived at two stable solutions that could be effectively promoted by the sales team.</p>      
+            </div>
+            <div class="image-caption-item">
+              <img src="img/Goface_1.png" alt="GoFace-1" class="goface-about-image">
+            </div>
+          </div>
+      </div>
+    </section>
+    <hr>
+    <section class="block-b">
+      <h1 class="block-b-title">Research</h1>
+      <div class="block-b-content">
+        <h3>Problem & Needs</h3>
+        <p>GoFace was free to import and try for one month.
+          During this period, we made adjustments based on user feedback and needs.
+          Four partner stores participated in the pilot program to test and validate new features.</p>
+      </div>
+    </section>
+    <section class="block-b">
+      <div class="block-b-content">
+        <div class="image-caption-block">
+            <div class="image-caption-container col-3">
+              <div class="image-caption-item">
+                <h2 class="image-caption-title">1.Problem</h2>
+                <p>Small stores or companies that still use traditional time clocks face the inconvenience of manually calculating employee salaries at the end of each month.</p>  
+              </div>
+              <div class="image-caption-item">
+                <h2 class="image-caption-title">2. Automation and Cloud Integration</h2>
+                <p>Users can customize policies and scenes to let one device trigger another, while automatically storing data in the cloud.</p>  
+              </div>
+              <div class="image-caption-item">
+                <h2 class="image-caption-title">3. Smart Notifications and History</h2>
+                <p>Receive instant notifications when events occur, and save history and video clips directly in the app.</p>  
+              </div>
+            </div>
+        </div>
+      </div>
+    </section>
+    <section class="block-b">
+      <h1 class="block-b-title">Define Goals</h1>
+      <div class="block-b-content">
+        <p>Replace legacy punch clock with face recognition technology that's accurate and easy to use.</p>
+        <div class="image-caption-block">
+            <div class="image-caption-container col-3">
+              <div class="image-caption-item goface-icon-item">
+                <img src="img/GoFace_icon1.png" alt="icon-1" class="goface-icon">
+                <p>Replace legacy with face recognition technology</p>  
+              </div>
+              <div class="image-caption-item goface-icon-item">
+                <img src="img/GoFace_icon2.png" alt="icon-2" class="goface-icon">
+                <p>Remote Attendence & Reports</p>  
+              </div>
+              <div class="image-caption-item goface-icon-item">
+                <img src="img/GoFace_icon3.png" alt="icon-3" class="goface-icon">
+                <p>Automated Wage Calculation</p>  
+              </div>
+            </div>
+        </div>
+      </div>
+    </section>
+    <section class="block-b">
+      <h1 class="block-b-title">Step by step</h1>
+      <div class="block-b-content">
+        <img src="img/GoFace_Step by step.png" alt="step-by-step">
+      </div>
+    </section>
+    <hr>
+    <section class="block-b">
+      <h1 class="block-b-title">User Feedback and Optimization</h1>
+      <div class="block-b-content">
+        <div class="image-caption-block">
+            <div class="image-caption-container col-3">
+              <div class="image-caption-item">
+                <div class="feedback-text-box">
+                  <p>The employee is just chatting at the door, and the employee's face is detected and the door is opened. I don't want the door to open and close too sensitively.</p>  
+                </div>
+                <div class="yellow-arrow"></div>
+                <h2 class="image-caption-title">Optimize user experience</h2>
+                <img src="img/GoFace_feedback1.png" alt="feedback-1">
+              </div>
+              <div class="image-caption-item">
+                <div class="feedback-text-box">
+                  <p>Due to the epidemic, employees are working from home. We need a remote punch-in function, so that employees who work from home or outside can punch in.</p>  
+                </div>
+                <div class="yellow-arrow"></div>
+                <h2 class="image-caption-title">Added self-use mobile phone check-in function</h2>
+                <img src="img/GoFace_feedback2.png" alt="feedback-2">
+              </div>
+              <div class="image-caption-item">
+                <div class="feedback-text-box">
+                  <p>Employees who punch in by themselves in our company must limit the punching area and make sure that the employee punches in within the work area.</p>  
+                </div>
+                <div class="yellow-arrow"></div>
+                <h2 class="image-caption-title">Added geofencing feature</h2>
+                <img src="img/GoFace_feedback3.png" alt="feedback-3">
+              </div>
+              
+            </div>
+        </div>
+      </div>
+      <hr>
+      <section class="block-b">
+        <h1 class="block-b-title">Design Hand Off</h1>
+        <p>I worked closely with the engineers to validate the design and copy implementation.</p>
+        <div class="block-b-content">
+          <img src="img/GoFace_handoff1.png" alt="GoFace_handoff-1">
+        </div>
+      </section>
+      <section class="block-b">
+        <h1 class="block-b-title">App</h1>
+        <div class="block-b-content">
+          <img src="img/GoFace_handoff2.png" alt="GoFace_handoff-2">
+        </div>
+      </section>
+    </section>
   </div>
 
   <!-- Footer -->
@@ -121,6 +245,77 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    // Ensure all feedback-text-box and image-caption-title in User Feedback section have the same height
+    function setEqualHeights() {
+      const allSections = document.querySelectorAll('.block-b');
+      allSections.forEach(section => {
+        const title = section.querySelector('.block-b-title');
+        if (title && title.textContent.trim() === 'User Feedback and Optimization') {
+          // Set equal heights for feedback-text-box
+          const feedbackBoxes = section.querySelectorAll('.feedback-text-box');
+          if (feedbackBoxes.length > 0) {
+            let maxHeight = 0;
+            // First, reset heights to auto to get natural heights
+            feedbackBoxes.forEach(box => {
+              box.style.height = 'auto';
+            });
+            // Then measure all heights
+            feedbackBoxes.forEach(box => {
+              const height = box.offsetHeight;
+              if (height > maxHeight) {
+                maxHeight = height;
+              }
+            });
+            // Finally, set all boxes to the max height
+            feedbackBoxes.forEach(box => {
+              box.style.height = maxHeight + 'px';
+            });
+          }
+
+          // Set equal heights for image-caption-title
+          const captionTitles = section.querySelectorAll('.image-caption-title');
+          if (captionTitles.length > 0) {
+            let maxTitleHeight = 0;
+            // First, reset heights to auto to get natural heights
+            captionTitles.forEach(titleEl => {
+              titleEl.style.height = 'auto';
+              titleEl.style.minHeight = 'auto';
+            });
+            // Then measure all heights
+            captionTitles.forEach(titleEl => {
+              const height = titleEl.offsetHeight;
+              if (height > maxTitleHeight) {
+                maxTitleHeight = height;
+              }
+            });
+            // Finally, set all titles to the max height
+            captionTitles.forEach(titleEl => {
+              titleEl.style.height = maxTitleHeight + 'px';
+              titleEl.style.minHeight = maxTitleHeight + 'px';
+            });
+          }
+        }
+      });
+    }
+
+    // Run on page load
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(setEqualHeights, 100);
+      });
+    } else {
+      setTimeout(setEqualHeights, 100);
+    }
+
+    // Run on window resize to recalculate
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(setEqualHeights, 250);
+    });
+  </script>
 </body>
 </html>
 
