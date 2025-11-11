@@ -36,7 +36,11 @@
       </div>
       <div class="hero-content">
         <div class="hero-image-wrapper">
-          <img src="img/SP_img1.png" alt="Lucky Draw Hero">
+          <!-- <img src="img/SP_img1.png" alt="Lucky Draw Hero"> -->
+          <video id="luckydraw-demo-video" width="100%" muted playsinline autoplay loop controls>
+            <source src="img/luckydraw_demo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
         </div>
         <div class="image-card">
           <p>It actually started as a small side game for our company’s annual party. Another iOS developer and I had to create a Bingo and lucky draw app within just a few days, using our free time outside of work. The goal was simply to let our colleagues play during the event — but to our surprise, after the app was launched, the number of downloads far exceeded our expectations!</p>
@@ -157,5 +161,48 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    // Ensure video autoplays and loops when visible
+    const video = document.getElementById('luckydraw-demo-video');
+    if (video) {
+      // Set video properties - default muted but user can unmute
+      video.muted = true;
+      video.loop = true;
+      
+      // Allow user to toggle mute/unmute via controls
+      video.addEventListener('volumechange', function() {
+        // User can control volume through browser controls
+      });
+      
+      // Try to play the video
+      video.play().catch(error => {
+        console.log('Autoplay prevented:', error);
+      });
+      
+      // Use Intersection Observer to play when video is visible
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            video.play().catch(error => {
+              console.log('Play prevented:', error);
+            });
+          } else {
+            video.pause();
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+      
+      observer.observe(video);
+      
+      // Ensure video loops
+      video.addEventListener('ended', () => {
+        video.currentTime = 0;
+        video.play();
+      });
+    }
+  </script>
 </body>
 </html>
