@@ -3,12 +3,26 @@
   color: #000000;
 }
 
-.hero-content {
+/* Hero content layout - only applies to pages with hero-content class */
+section.hero .hero-content {
   display: grid;
   grid-template-columns: 1.4fr 1fr;
   gap: 40px;
   align-items: start;
   margin-top: 24px;
+}
+
+/* Ensure about page uses side-by-side layout on larger screens (above 768px) */
+@media (min-width: 769px) {
+  .hero .hero-content {
+    display: grid !important;
+    grid-template-columns: 1.4fr 1fr !important;
+  }
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
 }
 
 .hero-image-wrapper {
@@ -58,7 +72,7 @@
 
 @media (max-width: 768px) {
   .hero-content {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
     gap: 30px;
     margin-top: 40px;
   }
@@ -253,11 +267,22 @@
 }
 
 
+.block-a-left {
+  display: flex;
+  flex-direction: column;
+}
+
 .block-a-title {
   font-size: 1.5rem;
   font-weight: 600;
   color: #000000;
-  margin: 0;
+  margin: 0 0 24px 0;
+}
+
+.block-a-left img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .block-a-content {
