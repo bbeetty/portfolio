@@ -773,3 +773,36 @@ section.hero .hero-content {
   }
 }
 
+/* Share URL Links Styles */
+.share_url {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.share_url a {
+  display: inline-flex;
+  align-items: center;
+  color: #333333;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.2s ease;
+  width: fit-content;
+}
+
+.share_url a::after {
+  content: '→';
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.share_url a:hover {
+  color: #666666;
+}
+
+.share_url a:hover::after {
+  transform: translateX(4px);
+}
+
