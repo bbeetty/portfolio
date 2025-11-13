@@ -829,15 +829,52 @@ section.hero .hero-content {
   margin-top: 0px;
 }
 
+/* YouTube Video Wrapper Small - Two videos side by side */
+.youtube-video-wrapper-smail {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 24px;
+  width: 100%;
+}
+
+.youtube-video-wrapper-smail .youtube-video-item {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.youtube-video-wrapper-smail .youtube-video-item iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 /* YouTube Video Responsive */
 @media (max-width: 768px) {
   .youtube-video-wrapper {
+    margin-top: 20px;
+  }
+  
+  .youtube-video-wrapper-smail {
+    grid-template-columns: 1fr;
+    gap: 16px;
     margin-top: 20px;
   }
 }
 
 @media (max-width: 480px) {
   .youtube-video-wrapper {
+    margin-top: 16px;
+  }
+  
+  .youtube-video-wrapper-smail {
+    gap: 12px;
     margin-top: 16px;
   }
 }
