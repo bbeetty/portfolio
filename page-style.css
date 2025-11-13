@@ -855,6 +855,13 @@ section.hero .hero-content {
   border: none;
 }
 
+/* Facebook Reel responsive styling */
+#youtube-video-4 iframe {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100%;
+}
+
 /* YouTube Video Responsive */
 @media (max-width: 768px) {
   .youtube-video-wrapper {
