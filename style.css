@@ -221,6 +221,52 @@ a {
   display: block;
 }
 
+/* Coming Soon Styles */
+.side-card.coming-soon {
+  cursor: default;
+  pointer-events: none;
+}
+
+.side-card.coming-soon:hover {
+  transform: none;
+}
+
+.side-card-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.side-card-image-wrapper img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+.coming-soon-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.coming-soon-text {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333333;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
 .side-card-content {
   padding: 20px;
 }
