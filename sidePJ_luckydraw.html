@@ -92,7 +92,7 @@
   <section class="block-a">
     <div class="block-a-left">
       <h1 class="block-a-title">About the Project</h1>
-      <img src="img/Year-end party_photo.png" alt="About the Project">
+      <img src="img/Year-end party_photo.png" alt="About the Project" class="year-end-party-photo">
     </div>
     <div class="block-a-content">
       <p>As part of the startup Astra, I was gearing up for the most anticipated winter event—our year-end party (second only to Christmas, of course). At Astra, there’s a special tradition: whoever wins the grand prize becomes the planner and host for the following year’s celebration.</p>
@@ -101,17 +101,28 @@
     </div>
   </section>
   <hr>
-  <section class="block-a">
-    <h1 class="block-a-title">Competitor Analysis</h1>
-    <div class="block-a-content">
+  <section class="block-b competitor-analysis">
+    <h1 class="block-b-title">Competitor Analysis</h1>
+    <div class="block-b-content">
       <p>At first, we searched online for an existing website or app that we could use directly. There were plenty of lottery apps out there, but few with good aesthetics. Even the better-looking ones lacked a fun, festive vibe—or were filled with annoying ads that kept interrupting the event. So, when we couldn’t find the right tool, we decided to build our own!</p>
       <br>
-      <p>1. The interface was simple but plain, lacking a festive atmosphere and not meeting our needs.</p>
-      <img src="img/luckydraw_app_1.jpeg" alt="luckydraw_app_1"><br>
-      <p>2. The interface used a roulette-style animation that wasn’t smooth, and frequent full-screen ads kept popping up, making it unsuitable for our needs.</p>
-      <img src="img/luckydraw_app_2.jpeg" alt="luckydraw_app_2"><br>
-      <p>3. The interface was simple but plain, lacking a festive atmosphere and not meeting our needs.</p>
-      <img src="img/luckydraw_app_3.jpeg" alt="luckydraw_app_3"><br>
+      
+      <div class="image-caption-block">
+        <div class="image-caption-container col-3">
+          <div class="image-caption-item">
+            <p>1. The interface was simple but plain, lacking a festive atmosphere and not meeting our needs.</p>
+            <img src="img/luckydraw_app_1.jpeg" alt="luckydraw_app_1"><br>
+          </div>
+          <div class="image-caption-item">
+            <p>2. The interface used a roulette-style animation that wasn’t smooth, and frequent full-screen ads kept popping up, making it unsuitable for our needs.</p>
+            <img src="img/luckydraw_app_2.jpeg" alt="luckydraw_app_2"><br>      
+          </div>
+          <div class="image-caption-item">
+            <p>3. The interface was simple but plain, lacking a festive atmosphere and not meeting our needs.</p>
+            <img src="img/luckydraw_app_3.jpeg" alt="luckydraw_app_3"><br>      
+          </div>
+        </div>
+      </div>
     </div>
   </section>
   <hr>
@@ -311,25 +322,6 @@
       video.addEventListener('ended', () => {
         video.currentTime = 0;
         video.play();
-      });
-    }
-
-    // Handle Facebook Reel loop and mute
-    const fbVideoIframe = document.getElementById('fb-video-iframe');
-    if (fbVideoIframe) {
-      // Facebook iframe doesn't support direct loop, so we'll reload it when it ends
-      // Note: Facebook's embed API limitations may prevent perfect looping
-      // This is a workaround that reloads the iframe periodically
-      let fbVideoReloadInterval;
-      
-      // Try to detect when video ends (limited by Facebook's cross-origin restrictions)
-      // As a fallback, we'll use a timer-based approach
-      fbVideoIframe.addEventListener('load', function() {
-        // Set up a check interval (Facebook Reels are typically short)
-        // Adjust interval based on typical video length
-        clearInterval(fbVideoReloadInterval);
-        // Reload every 30 seconds as a fallback (adjust based on video length)
-        // For better UX, you might want to adjust this to match actual video length
       });
     }
   </script>
