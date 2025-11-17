@@ -83,6 +83,23 @@ a {
   position: relative;
 }
 
+.hero {
+  position: relative;
+  overflow: hidden; /* 讓飄動圖片維持在區塊內 */
+}
+
+/* 飄動 PNG */
+.floating-img {
+  position: absolute;
+  width: 480px; /* 你可以改大小 */
+  top: 0;
+  left: 0;
+  opacity: 0.55; /* 建議淡淡的比較不搶戲 */
+  pointer-events: none;
+  user-select: none;
+  transform: translate(0, 0);
+}
+
 .hero-background-image {
   position: absolute;
   top: 0;

@@ -28,20 +28,20 @@
 
   <!-- Main Content -->
   <div class="main-content">
-    <img src="img/gradient.png" alt="Hero-background-image" class="hero-background-image">
-    <!-- Hero Section -->
     <section class="hero">
+      <img src="img/floating.png" alt="floating object" class="floating-img">
       <h1>Hello, I'm Betty Chen.</h1>
       <div class="subtitle">Product Designer</div>
       <p class="description">
         With experience in R&D, PM, and design leadership, I work across IoT, SaaS, and hardware-software integration. 
         I'm passionate about simplifying complexity and driving impact through thoughtful design.
       </p>
+      <div class="section-title">Featured Projects</div>
     </section>
 
     <!-- Featured Projects Section -->
     <section class="featured-projects">
-      <div class="section-title">Featured Projects</div>
+      
       
       <a class="project-link" href="rezio_flexible_booking_date.html">
         <div class="project">
@@ -185,5 +185,46 @@
       </div>
     </div>
   </footer>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const img = document.querySelector(".floating-img");
+      const container = document.querySelector(".hero");
+  
+      // 初始位置
+      let x = 50;
+      let y = 50;
+  
+      // 移動速度（越小越慢，越大越快）
+      let vx = 1.0;
+      let vy = 0.8;
+  
+      function animate() {
+        const rect = container.getBoundingClientRect();
+        const w = img.offsetWidth;
+        const h = img.offsetHeight;
+  
+        x += vx;
+        y += vy;
+  
+        // 撞左右反彈
+        if (x <= 0 || x + w >= rect.width) {
+          vx = -vx;
+        }
+  
+        // 撞上下反彈
+        if (y <= 0 || y + h >= rect.height) {
+          vy = -vy;
+        }
+  
+        img.style.transform = `translate(${x}px, ${y}px)`;
+        requestAnimationFrame(animate);
+      }
+  
+      animate();
+    });
+  </script>
+  
 </body>
 </html>
