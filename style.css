@@ -80,11 +80,24 @@ a {
   margin-left: auto;
   margin-right: auto;
   padding: 0 40px;
+  position: relative;
+}
+
+.hero-background-image {
+  position: absolute;
+  top: 0;
+  right: 40px;
+  width: 458px;
+  height: 363px;
+  z-index: 0;
+  object-fit: contain;
 }
 
 /* Hero Section */
 .hero {
   padding: 64px 0 40px 0;
+  position: relative;
+  z-index: 1;
 }
 
 .hero h1,
