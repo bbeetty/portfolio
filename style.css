@@ -94,10 +94,11 @@ a {
   width: 480px; /* 你可以改大小 */
   top: 0;
   left: 0;
-  opacity: 0.55; /* 建議淡淡的比較不搶戲 */
+  opacity: 0.8; /* 建議淡淡的比較不搶戲 */
   pointer-events: none;
   user-select: none;
   transform: translate(0, 0);
+  z-index: 1; /* 在 Hej! 文字下方，作為底色 */
 }
 
 .hero-background-image {
@@ -115,6 +116,38 @@ a {
   padding: 64px 0 40px 0;
   position: relative;
   z-index: 1;
+}
+
+.hero-content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-text-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-hej {
+  font-size: 120px;
+  font-weight: 700;
+  color: #ffffff;
+  opacity: 0.5;
+  line-height: 1;
+  position: relative;
+  z-index: 2; /* 在 floating-img 上方 */
+  pointer-events: none;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  min-height: 200px; /* 確保有足夠高度 */
 }
 
 .hero h1,
@@ -391,6 +424,10 @@ a {
     padding: 0 30px;
   }
 
+  .hero-hej {
+    font-size: 100px;
+  }
+
   .hero h1,
   .hero .subtitle,
   .page-title {
@@ -421,6 +458,22 @@ a {
     padding: 40px 0 80px 0;
   }
 
+  .hero-content-wrapper {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .hero-hej {
+    font-size: 80px;
+    order: -1;
+    margin-bottom: 20px;
+    min-height: 150px;
+  }
+
+  .floating-img {
+    width: 288px; /* 480px * 60% = 288px */
+  }
+
   .hero h1,
   .hero .subtitle,
   .page-title {
@@ -449,6 +502,11 @@ a {
 }
 
 @media (max-width: 480px) {
+  .hero-hej {
+    font-size: 60px;
+    min-height: 120px;
+  }
+
   .hero h1,
   .hero .subtitle,
   .page-title {

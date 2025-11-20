@@ -45,12 +45,17 @@
   <div class="main-content">
     <section class="hero">
       <img src="img/floating.png" alt="floating object" class="floating-img">
-      <h1>Hello, I'm Betty Chen.</h1>
-      <div class="subtitle">Product Designer</div>
-      <p class="description">
-        With experience in R&D, PM, and design leadership, I work across IoT, SaaS, and hardware-software integration. 
-        I'm passionate about simplifying complexity and driving impact through thoughtful design.
-      </p>
+      <div class="hero-content-wrapper">
+        <div class="hero-text-content">
+          <h1>Hello, I'm Betty Chen.</h1>
+          <div class="subtitle">Product Designer</div>
+          <p class="description">
+            With experience in R&D, PM, and design leadership, I work across IoT, SaaS, and hardware-software integration. 
+            I'm passionate about simplifying complexity and driving impact through thoughtful design.
+          </p>
+        </div>
+        <div class="hero-hej">Hej!</div>
+      </div>
       <div class="section-title">Featured Projects</div>
     </section>
 
@@ -206,38 +211,92 @@
     document.addEventListener("DOMContentLoaded", () => {
       const img = document.querySelector(".floating-img");
       const container = document.querySelector(".hero");
+      const hejElement = document.querySelector(".hero-hej");
   
-      // 初始位置
-      let x = 50;
-      let y = 50;
-  
-      // 移動速度（越小越慢，越大越快）
-      let vx = 0.8;
-      let vy = 0.3;
-  
-      function animate() {
-        const rect = container.getBoundingClientRect();
-        const w = img.offsetWidth;
-        const h = img.offsetHeight;
-  
-        x += vx;
-        y += vy;
-  
-        // 撞左右反彈
-        if (x <= 0 || x + w >= rect.width) {
-          vx = -vx;
+      // 計算初始位置：從 Hej! 的中心位置出發
+      function getInitialPosition() {
+        if (hejElement && container) {
+          const containerRect = container.getBoundingClientRect();
+          const hejRect = hejElement.getBoundingClientRect();
+          
+          // 計算 Hej! 的中心位置相對於 container 的位置
+          const hejLeft = hejRect.left - containerRect.left;
+          const hejTop = hejRect.top - containerRect.top;
+          const hejCenterX = hejLeft + (hejRect.width / 2);
+          const hejCenterY = hejTop + (hejRect.height / 2);
+          
+          // 讓圖片從 Hej! 的中心位置開始，圖片中心對齊 Hej! 中心
+          const imgWidth = img.offsetWidth || 480;
+          const imgHeight = img.offsetHeight || 480;
+          let x = hejCenterX - (imgWidth / 2);
+          let y = hejCenterY - (imgHeight / 2);
+          
+          // 確保圖片在 hero-hej 範圍內
+          const hejRight = hejLeft + hejRect.width;
+          const hejBottom = hejTop + hejRect.height;
+          x = Math.max(hejLeft, Math.min(x, hejRight - imgWidth));
+          y = Math.max(hejTop, Math.min(y, hejBottom - imgHeight));
+          
+          return { x, y };
         }
-  
-        // 撞上下反彈
-        if (y <= 0 || y + h >= rect.height) {
-          vy = -vy;
-        }
-  
-        img.style.transform = `translate(${x}px, ${y}px)`;
-        requestAnimationFrame(animate);
+        return { x: 50, y: 50 }; // fallback
       }
   
-      animate();
+      // 等待頁面渲染完成後再計算位置
+      setTimeout(() => {
+        if (!hejElement) return;
+        
+        const initialPos = getInitialPosition();
+        let x = initialPos.x;
+        let y = initialPos.y;
+        let rotation = 0; // 旋轉角度
+        
+        // 設置初始位置
+        img.style.transform = `translate(${x}px, ${y}px) rotate(${rotation}deg)`;
+        
+        // 移動速度（越小越慢，越大越快）
+        let vx = 0.6;
+        let vy = 0.2;
+        const rotationSpeed = 0.5; // 旋轉速度（度/幀）
+        
+        function animate() {
+          // 使用 hero-hej 的邊界作為活動範圍
+          const containerRect = container.getBoundingClientRect();
+          const hejRect = hejElement.getBoundingClientRect();
+          
+          // 計算 hero-hej 相對於 hero 的位置
+          const hejLeft = hejRect.left - containerRect.left;
+          const hejTop = hejRect.top - containerRect.top;
+          const hejRight = hejLeft + hejRect.width;
+          const hejBottom = hejTop + hejRect.height;
+          
+          const w = img.offsetWidth;
+          const h = img.offsetHeight;
+    
+          x += vx;
+          y += vy;
+          rotation += rotationSpeed; // 持續旋轉
+    
+          // 撞左右反彈（限制在 hero-hej 範圍內）
+          if (x < hejLeft || x + w > hejRight) {
+            vx = -vx;
+            // 確保不會超出邊界
+            x = Math.max(hejLeft, Math.min(x, hejRight - w));
+          }
+    
+          // 撞上下反彈（限制在 hero-hej 範圍內）
+          if (y < hejTop || y + h > hejBottom) {
+            vy = -vy;
+            // 確保不會超出邊界
+            y = Math.max(hejTop, Math.min(y, hejBottom - h));
+          }
+    
+          img.style.transform = `translate(${x}px, ${y}px) rotate(${rotation}deg)`;
+          requestAnimationFrame(animate);
+        }
+        
+        animate();
+      }, 100);
     });
   </script>
   
