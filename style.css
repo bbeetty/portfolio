@@ -204,6 +204,14 @@ a {
   margin-bottom: 0;
 }
 
+.project-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  margin-bottom: 15px;
+  display: block;
+}
+
 .project-text h3 {
   font-size: 1.4rem;
   font-weight: 600;
