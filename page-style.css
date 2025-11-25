@@ -181,6 +181,183 @@ section.hero .hero-content {
   }
 }
 
+/* Impact Snapshot Section */
+.impact-snapshot {
+  margin-top: 0px;
+  margin-bottom: 40px;
+}
+
+.impact-snapshot-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #AAAAAA;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.impact-card {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.impact-card-light {
+  background-color: #E6F2FF;
+}
+
+.impact-card-dark {
+  background-color: #005ABE;
+}
+
+.impact-card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+
+.impact-card-light .impact-card-title {
+  color: #005ABE;
+}
+
+.impact-card-dark .impact-card-title {
+  color: #FFFFFF;
+}
+
+.impact-card-description {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 24px;
+  flex: 1;
+}
+
+.impact-card-light .impact-card-description {
+  color: #005ABE;
+}
+
+.impact-card-dark .impact-card-description {
+  color: #FFFFFF;
+}
+
+.impact-metric {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: auto;
+}
+
+.impact-number {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.impact-card-light .impact-number {
+  color: #005ABE;
+}
+
+.impact-card-dark .impact-number {
+  color: #FFFFFF;
+}
+
+.impact-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.impact-card-light .impact-label {
+  color: #005ABE;
+}
+
+.impact-card-dark .impact-label {
+  color: #FFFFFF;
+}
+
+/* Impact Snapshot Responsive */
+@media (max-width: 1024px) {
+  .impact-grid {
+    gap: 16px;
+  }
+
+  .impact-card {
+    padding: 24px;
+  }
+
+  .impact-number {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .impact-snapshot {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+
+  .impact-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .impact-card {
+    padding: 24px;
+  }
+
+  .impact-card-title {
+    font-size: 1.1rem;
+  }
+
+  .impact-card-description {
+    font-size: 0.95rem;
+  }
+
+  .impact-number {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .impact-snapshot {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .impact-snapshot-title {
+    margin-bottom: 24px;
+  }
+
+  .impact-card {
+    padding: 20px;
+  }
+
+  .impact-card-title {
+    font-size: 1rem;
+  }
+
+  .impact-card-description {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+
+  .impact-number {
+    font-size: 2rem;
+  }
+
+  .impact-label {
+    font-size: 0.85rem;
+  }
+}
+
 /* Project Summary Section */
 .project-summary {
   border-top: 1px solid #000000;
