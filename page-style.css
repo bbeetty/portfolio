@@ -218,6 +218,10 @@ section.hero .hero-content {
   line-height: 1.5;
 }
 
+.summary-list .im-here {
+  color: #AAAAAA;
+}
+
 /* Project Summary Responsive */
 @media (max-width: 1024px) {
   .summary-grid {
