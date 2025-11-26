@@ -208,61 +208,7 @@ section.hero .hero-content {
   flex-direction: column;
   position: relative;
   overflow: hidden;
-}
-
-/* Impact Snapshot Theme: Rezio (Default) */
-.impact-snapshot.theme-rezio .impact-card-light {
-  background-color: #E6F2FF;
-}
-
-.impact-snapshot.theme-rezio .impact-card-dark {
-  background-color: #005ABE;
-}
-
-.impact-snapshot.theme-rezio .impact-card-light .impact-card-title,
-.impact-snapshot.theme-rezio .impact-card-light .impact-card-description,
-.impact-snapshot.theme-rezio .impact-card-light .impact-number,
-.impact-snapshot.theme-rezio .impact-card-light .impact-label {
-  color: #005ABE;
-}
-
-.impact-snapshot.theme-rezio .impact-card-dark .impact-card-title,
-.impact-snapshot.theme-rezio .impact-card-dark .impact-card-description,
-.impact-snapshot.theme-rezio .impact-card-dark .impact-number,
-.impact-snapshot.theme-rezio .impact-card-dark .impact-label {
-  color: #FFFFFF;
-}
-
-/* Impact Snapshot Theme: GoFace */
-.impact-snapshot.theme-goface .impact-card-light {
-  background-color: #FFF6D4;
-}
-
-.impact-snapshot.theme-goface .impact-card-dark {
-  background-color: #FF8901;
-}
-
-.impact-snapshot.theme-goface .impact-card-light .impact-card-title,
-.impact-snapshot.theme-goface .impact-card-light .impact-card-description,
-.impact-snapshot.theme-goface .impact-card-light .impact-number,
-.impact-snapshot.theme-goface .impact-card-light .impact-label {
-  color: #FF8901;
-}
-
-.impact-snapshot.theme-goface .impact-card-dark .impact-card-title,
-.impact-snapshot.theme-goface .impact-card-dark .impact-card-description,
-.impact-snapshot.theme-goface .impact-card-dark .impact-number,
-.impact-snapshot.theme-goface .impact-card-dark .impact-label {
-  color: #FFFFFF;
-}
-
-/* Default theme (Rezio) - for backward compatibility */
-.impact-card-light {
-  background-color: #E6F2FF;
-}
-
-.impact-card-dark {
-  background-color: #005ABE;
+  background-color: #FFFFFF;
 }
 
 .impact-card-title {
@@ -270,14 +216,7 @@ section.hero .hero-content {
   font-weight: 600;
   margin-bottom: 16px;
   line-height: 1.3;
-}
-
-.impact-card-light .impact-card-title {
-  color: #005ABE;
-}
-
-.impact-card-dark .impact-card-title {
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .impact-card-description {
@@ -285,14 +224,7 @@ section.hero .hero-content {
   line-height: 1.7;
   margin-bottom: 24px;
   flex: 1;
-}
-
-.impact-card-light .impact-card-description {
-  color: #005ABE;
-}
-
-.impact-card-dark .impact-card-description {
-  color: #FFFFFF;
+  color: #808080;
 }
 
 .impact-metric {
@@ -309,25 +241,20 @@ section.hero .hero-content {
   margin-bottom: 8px;
 }
 
-.impact-card-light .impact-number {
-  color: #005ABE;
-}
-
-.impact-card-dark .impact-number {
-  color: #FFFFFF;
-}
-
 .impact-label {
   font-size: 0.95rem;
   font-weight: 600;
+  color: #808080;
 }
 
-.impact-card-light .impact-label {
+/* Impact Snapshot Theme: Rezio */
+.impact-snapshot.theme-rezio .impact-card .impact-number {
   color: #005ABE;
 }
 
-.impact-card-dark .impact-label {
-  color: #FFFFFF;
+/* Impact Snapshot Theme: GoFace */
+.impact-snapshot.theme-goface .impact-card .impact-number {
+  color: #FF8901;
 }
 
 /* Impact Snapshot Responsive */
