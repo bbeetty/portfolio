@@ -1,6 +1,7 @@
 /* Page Styles */
 .hero .page-title {
   color: #000000;
+  margin-bottom: 8px;
 }
 
 /* Hero content layout - only applies to pages with hero-content class */
