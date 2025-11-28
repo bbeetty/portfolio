@@ -257,6 +257,18 @@ a {
   display: block; /* 確保容器穩定 */
   width: 100%;
   height: 100%;
+  position: relative;
+}
+
+.project-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #EBEEF5;
+  z-index: 0;
 }
 
 .project-image img {
@@ -267,6 +279,8 @@ a {
   transition: transform 0.3s ease; /* 平滑過渡效果 */
   transform-origin: center center; /* 從中心點放大 */
   will-change: transform; /* 優化動畫性能 */
+  position: relative;
+  z-index: 1;
 }
 
 .project-link:hover .project-image img {
