@@ -640,6 +640,7 @@ section.hero .hero-content {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 40px 0;
 }
 
 .block-a .full-image img {
@@ -700,11 +701,12 @@ section.hero .hero-content {
   font-weight: 400;
   line-height: 3rem;
   color: #000000;
-  margin: 0 0 0.5rem 0;
+  margin: 0rem 0 1.5rem 0;
 }
 
 .block-b-content {
   width: 100%;
+  margin-bottom: 40px;
 }
 
 .block-b .image-caption-block {
@@ -860,8 +862,8 @@ section.hero .hero-content {
 
 .block-b .full-image {
   width: 100%;
-  margin-top: 0px;
-  padding: 40px 0;
+  padding: 60px 0;
+  margin-bottom: 40px;
   border-radius: 12px;
   background-color: #F7F7F9;
   overflow: hidden;
