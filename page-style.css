@@ -426,7 +426,7 @@ section.hero .hero-content {
 /* Summary Grid - 3 Column Layout (for rezio) */
 .summary-grid-3col {
   display: grid;
-  grid-template-columns: 1fr 1fr 2fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 40px;
 }
 
@@ -544,8 +544,8 @@ section.hero .hero-content {
   display: grid;
   grid-template-columns: 3fr 9fr;
   gap: 40px;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin-top: 80px;
+  margin-bottom: 80px;
 }
 
 
