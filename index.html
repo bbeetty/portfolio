@@ -47,12 +47,12 @@
       <img src="img/floating.png" alt="floating object" class="floating-img">
       <div class="hero-content-wrapper">
         <div class="hero-text-content">
-          <h1>Hello, I'm Betty Chen.</h1>
-          <div class="subtitle">Product Designer</div>
-          <p class="description">
-            With experience in R&D, PM, and design leadership, I work across IoT, SaaS, and hardware-software integration. 
-            I'm passionate about simplifying complexity and driving impact through thoughtful design.
-          </p>
+      <h1>Hello, I'm Betty Chen.</h1>
+      <div class="subtitle">Product Designer</div>
+      <p class="description">
+        With experience in R&D, PM, and design leadership, I work across IoT, SaaS, and hardware-software integration. 
+        I'm passionate about simplifying complexity and driving impact through thoughtful design.
+      </p>
         </div>
         <div class="hero-hej">Hej!</div>
       </div>
@@ -70,7 +70,7 @@
             <h3>Flexible Booking Dates</h3>
             <p>Solved a critical Key Account pain point with a flexible monetization setting, driving a 20% Sales Uplift via high Cognitive Clarity.</p>
             <div class="project-tags">
-              <span class="project-tag">Feature Optimization</span> 
+              <span class="project-tag">Feature Optimization</span>
               <span class="project-tag">SaaS PMS</span>
               <span class="project-tag">B2B2C</span>
               <span class="project-tag">KKday Group</span>        
@@ -260,13 +260,13 @@
         
         // 設置初始位置
         img.style.transform = `translate(${x}px, ${y}px) rotate(${rotation}deg)`;
-        
-        // 移動速度（越小越慢，越大越快）
-        let vx = 0.6;
-        let vy = 0.2;
+  
+      // 移動速度（越小越慢，越大越快）
+      let vx = 0.6;
+      let vy = 0.2;
         const rotationSpeed = 0.5; // 旋轉速度（度/幀）
-        
-        function animate() {
+  
+      function animate() {
           // 使用 hero-hej 的邊界作為活動範圍
           const containerRect = container.getBoundingClientRect();
           const hejRect = hejElement.getBoundingClientRect();
@@ -277,32 +277,32 @@
           const hejRight = hejLeft + hejRect.width;
           const hejBottom = hejTop + hejRect.height;
           
-          const w = img.offsetWidth;
-          const h = img.offsetHeight;
-    
-          x += vx;
-          y += vy;
+        const w = img.offsetWidth;
+        const h = img.offsetHeight;
+  
+        x += vx;
+        y += vy;
           rotation += rotationSpeed; // 持續旋轉
-    
+  
           // 撞左右反彈（限制在 hero-hej 範圍內）
           if (x < hejLeft || x + w > hejRight) {
-            vx = -vx;
+          vx = -vx;
             // 確保不會超出邊界
             x = Math.max(hejLeft, Math.min(x, hejRight - w));
-          }
-    
+        }
+  
           // 撞上下反彈（限制在 hero-hej 範圍內）
           if (y < hejTop || y + h > hejBottom) {
-            vy = -vy;
+          vy = -vy;
             // 確保不會超出邊界
             y = Math.max(hejTop, Math.min(y, hejBottom - h));
-          }
-    
-          img.style.transform = `translate(${x}px, ${y}px) rotate(${rotation}deg)`;
-          requestAnimationFrame(animate);
         }
-        
-        animate();
+  
+          img.style.transform = `translate(${x}px, ${y}px) rotate(${rotation}deg)`;
+        requestAnimationFrame(animate);
+      }
+  
+      animate();
       }, 100);
     });
   </script>
