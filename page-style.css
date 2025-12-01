@@ -646,7 +646,6 @@ section.hero .hero-content {
   width: 70%;
   height: auto;
   display: block;
-  padding: 40px 0;
 }
 
 /* Block A Responsive */
@@ -692,8 +691,8 @@ section.hero .hero-content {
 
 /* Block B Section */
 .block-b {
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin-top: 80px;
+  margin-bottom: 80px;
 }
 
 .block-b-title {
@@ -724,6 +723,7 @@ section.hero .hero-content {
   gap: 40px;
   width: 100%;
   align-items: stretch;
+  margin-bottom: 40px;
 }
 
 .block-b .col-2 {
@@ -856,6 +856,24 @@ section.hero .hero-content {
   font-size: 1.2rem;
   font-weight: bold;
   line-height: 1;
+}
+
+.block-b .full-image {
+  width: 100%;
+  margin-top: 0px;
+  padding: 40px 0;
+  border-radius: 12px;
+  background-color: #F7F7F9;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.block-b .full-image img {
+  width: 90%;
+  height: auto;
+  display: block;
 }
 
 /* Block B Responsive */
