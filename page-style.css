@@ -53,12 +53,15 @@ section.hero .hero-content {
 
 .hero-image-wrapper {
   width: 100%;
+  overflow: visible;
 }
 
 .hero-image-wrapper img {
   width: 100%;
   height: auto;
   display: block;
+  transform: scale(1.1) translateX(40px);
+  transform-origin: center center;
 }
 
 .image-card {
@@ -129,6 +132,10 @@ section.hero .hero-content {
   .hero-image-wrapper {
     order: 1;
     width: 100%;
+  }
+  
+  .hero-image-wrapper img {
+    transform: scale(1.1) translateX(0);
   }
   
   .image-card {
