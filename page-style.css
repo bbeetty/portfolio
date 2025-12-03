@@ -414,7 +414,7 @@ section.hero .hero-content {
 .project-summary {
   border-top: 1px solid #000000;
   border-bottom: 1px solid #000000;
-  padding: 24px 0;
+  padding: 40px 0;
 }
 
 .summary-grid {
@@ -446,9 +446,9 @@ section.hero .hero-content {
 }
 
 .summary-title {
-  font-size: 0.85rem;
+  font-size: 1.25rem;
   font-weight: 600;
-  color: #AAAAAA;
+  color: #7F7F7F;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 20px;
@@ -718,9 +718,9 @@ section.hero .hero-content {
 }
 
 .block-b .image-caption-title {
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: 600;
-  color: #000000;
+  color: #7F7F7F;
   margin: 0 0 20px 0;
 }
 
