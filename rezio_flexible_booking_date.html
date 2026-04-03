@@ -43,7 +43,9 @@
         </div>
         <div class="image-card">
           <img src="img/rezio_logo.png" alt="rezio logo" class="image-card-logo">
-          <p>A new feature was added to the "Rezio Booking System," allowing users to define specific single or multiple dates, rather than a continuous time period, and set prices for those specific dates.</p>
+          <p>Extended the booking configuration system in Rezio
+            by introducing a guided path for irregular scheduling scenarios,
+            without disrupting the existing workflow for recurring users.</p>
           <div class="image-subtitle-wrapper">
             • Integrated with 4 travel e-commerce platforms<br>
             • Supports payments through 5 payment service providers<br>
@@ -72,30 +74,89 @@
         <div class="summary-column">
           <h4 class="summary-title">Impact</h4>
           <ul class="summary-list">
-            <li>• Reduced interaction risks and improved engineering scalability, <strong>saving 2 weeks </strong>of development time.<li>
-            <li>• Identified risks in related features early, preventing production issues and shortening PM/R&D cycles by <strong>3 weeks</strong>.</li>
-            <li>• Launched a monetizable feature that <strong>lifted revenue by 10%</strong>.</li>
+            <li>• Led end-to-end UX design<li>
+            <li>• Defined product structure with PM</li>
+            <li>• Collaborated with engineers on constraints</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- Block A Section -->
-    <section class="block-a">
-      <h1 class="block-a-title">Brief</h1>
-      <div class="block-a-content">
-        <p>In the summer of 2025, my team gradually transitioned from a group of three to just myself. The two teammates I had originally assigned—who once brought fresh perspectives to improve long-standing pain points—left the project due to changes in their personal plans.<br>At that time, the project had reached the stage where the main features were completed and a new "Wish Feature" needed to be added.<br>
-          After taking over, I had to quickly familiarize myself with the newly established Design System, file structure, and hand-off process.<br>
-          Meanwhile, I needed to design a new type of setting feature under an incomplete Design System and optimize potential risks within the existing UI.</p>
-      </div>
+    <!-- Block Ｂ Section -->
+    <section class="block-b">
+      <h1 class="block-b-title">Context</h1>
+      <div class="block-b-content">
+        <div class="image-caption-block">
+          <h2 class="image-caption-title">Merchants on Rezio operate with different scheduling models.</h2>
+            <div class="image-caption-container col-2">
+              <div class="image-caption-item">
+                <p class="design-o">Recurring scenarios (majority)：</p>
+                <ul>
+                  <li>Camping reservations</li>
+                  <li>Theme park tickets</li>
+                  <li>Workshop classes</li>
+                </ul>
+                <br>
+                <p>(These follow predictable weekly patterns)</p>
+              </div>
+              <div class="image-caption-item">
+                <p class="design-x">Irregular scenarios (edge cases)：</p>
+                <ul>
+                  <li>Ski trips</li>
+                  <li>Christmas and New Year's Eve bookings</li>
+                  <li>Special event reservations</li>
+                </ul>
+                <br>
+                <p>(These only open on specific or non-recurring dates)</p>
+              </div>
+            </div>
+            <div class="full-image"><img src="img/rezio_img_A vs B.png" alt="rezio_img_A vs B"></div>
+        </div>
+      </div>      
     </section>
     <hr>
     <section class="block-a">
       <h1 class="block-a-title">Problem</h1>
       <div class="block-a-content">
-        <p>Through user interviews with AMs and BDs, we learned how their clients configure dates using the current system. Many had to select numerous "excluded dates" just to achieve specific-date scheduling.</p>
+        <p>The current system is built around weekly recurring rules.</p>
+        <p>While this works well for most merchants,it fails to support irregular scheduling scenarios.</p>
+        <ul>
+          <li>Time-consuming manual setup</li>
+          <li>High risk of misconfiguration</li>
+          <li>Inefficient for non-recurring use cases</li>
+        </ul>
+        <p>As a result, merchants rely on workarounds or inefficient processes.</p>
       </div>
       <div class="full-image"><img src="img/rezio_problem_img.png" alt="Problem illustration"></div>
+    </section>
+    <section class="block-a">
+      <h1 class="block-a-title">Key Insight</h1>
+      <div class="block-a-content">
+        <p>Instead of redesigning the entire system,introducing a parallel path for irregular scenarios is a more scalable and less disruptive solution.</p>
+        <p>This allows the system to remain efficient for the majority while supporting edge cases effectively.</p>     
+      </div>
+    </section>
+    <section class="block-a">
+      <h1 class="block-a-title">Design Strategy</h1>
+      <div class="block-a-content">
+        <ul>
+          <li>Preserve the existing workflow for recurring users</li>
+          <li>Introduce a guided entry point for irregular scenarios</li>
+          <li>Minimize disruption to current user habits</li>
+        </ul>
+      </div>
+    </section>
+    <section class="block-a">
+      <h1 class="block-a-title">Solution: Entry Flow / Smart Routing</h1>
+      <div class="block-a-content">
+        <p>Introduced a short questionnaire to guide users into the appropriate configuration path.</p>
+        <ul>
+          <li>Reduces decision friction</li>
+          <li>Prevents misconfiguration</li>
+          <li>Matches user mental model</li>
+        </ul>
+      </div>
+      <div class="full-image"><img src="img/rezio_img_Flexible_date.png" alt="Key Insight illustration"></div>
     </section>
     
     <section class="block-a">

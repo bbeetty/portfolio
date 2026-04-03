@@ -22,6 +22,10 @@ section.hero .hero-content {
 }
 
 /* Hero content background images */
+.hero-content-rezio2 {
+  background-image: url('img/rezio_orderlist_hero_bg.png');
+}
+
 .hero-content-rezio {
   background-image: url('img/rezio_hero_bg.jpg');
 }
@@ -644,10 +648,11 @@ section.hero .hero-content {
 }
 
 .block-a .full-image img {
-  width: 70%;
+  width: 80%;
   height: auto;
   display: block;
 }
+
 
 /* Block A Responsive */
 @media (max-width: 768px) {
