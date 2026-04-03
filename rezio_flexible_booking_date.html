@@ -160,7 +160,19 @@
     </section>
 
     <section class="block-a">
-      <h1 class="block-a-title">UX Decisions</h1>
+      <h1 class="block-a-title">Key Challenges</h1>
+      <div class="block-a-content">
+        <p><strong>A. Dependency on legacy configuration logic</strong><br>
+          The "Specific Dates" feature needed to align with existing base settings, which introduced constraints and potential confusion in pricing relationships.
+          <br>This required careful restructuring of the interaction flow to avoid conflicting logic.</p>
+        <p><strong>B. Handling wide variations in date scale</strong><br>
+          Specific dates can range from a few days to over 200 days.
+          <br>This required a flexible layout that could scale without overwhelming users, while still keeping pricing information visible within the first viewport.</p>
+      </div>
+    </section>
+
+    <section class="block-a">
+      <h1 class="block-a-title">Design Decisions</h1>
       <div class="block-a-content">
         <p><strong>1. Split the configuration into two modes</strong><br>
           To address two fundamentally different use cases—recurring schedules and irregular dates—we separated the flow into distinct modes.
@@ -173,27 +185,6 @@
           <br>This ensures the interface reflects the actual system state, avoids unnecessary visual noise, and keeps users focused on their primary task—setting prices.</p>
       </div>    
     </section>
-    
-    <section class="block-a">
-      <h1 class="block-a-title">Key Challenges</h1>
-      <div class="block-a-content">
-        <p><strong>A. Handling wide variations in date scale</strong><br>
-          Specific dates can range from a few days to over 200 days.
-          <br>This required a flexible layout that could scale without overwhelming users, while still keeping pricing information visible within the first viewport.</p>
-        <p><strong>B. Dependency on legacy configuration logic</strong><br>
-          The "Specific Dates" feature needed to align with existing base settings, which introduced constraints and potential confusion in pricing relationships.
-          <br>This required careful restructuring of the interaction flow to avoid conflicting logic.</p>
-      </div>
-    </section>
-
-    <section class="block-a">
-      <h1 class="block-a-title">Cross-functional Collaboration</h1>
-      <div class="block-a-content">
-        <p>To align on business priorities and technical feasibility, I initiated a cross-functional kickoff with PMs and engineers early in the process.</p>
-        <p>This helped surface key constraints—such as system dependencies and component limitations—before design execution.</p>
-        <p>During the design phase, we conducted iterative reviews in small groups, enabling faster feedback loops and more informed design decisions.</p><br>
-      </div>
-    </section> 
 
     <section class="block-a">
       <h1 class="block-a-title">Design Principles</h1>
@@ -208,6 +199,17 @@
         </ol>
       </div>
     </section>
+  
+    <section class="block-a">
+      <h1 class="block-a-title">Cross-functional Collaboration</h1>
+      <div class="block-a-content">
+        <p>To align on business priorities and technical feasibility, I initiated a cross-functional kickoff with PMs and engineers early in the process.</p>
+        <p>This helped surface key constraints—such as system dependencies and component limitations—before design execution.</p>
+        <p>During the design phase, we conducted iterative reviews in small groups, enabling faster feedback loops and more informed design decisions.</p><br>
+      </div>
+    </section> 
+
+
     <hr>
     <section class="block-b">
       <h1 class="block-b-title">UI Implementation</h1>
