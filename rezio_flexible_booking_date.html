@@ -158,25 +158,40 @@
       </div>
       <div class="full-image"><img src="img/rezio_img_Flexible_date.png" alt="Key Insight illustration"></div>
     </section>
+
+    <section class="block-a">
+      <h1 class="block-a-title">UX Decisions</h1>
+      <div class="block-a-content">
+        <p><strong>1. Split the configuration into two modes</strong><br>
+          To address two fundamentally different use cases—recurring schedules and irregular dates—we separated the flow into distinct modes.
+          <br>This prevents users from combining incompatible rules and reduces configuration errors caused by misaligned mental models.</p>
+        <p><strong>2. Focus on one pricing rule at a time</strong><br>
+          Instead of displaying multiple special pricing rules simultaneously, we simplified the interface to show only one active configuration.
+          <br>This reduces cognitive load and allows users to focus on a single task, improving both accuracy and confidence during setup.</p>
+        <p><strong>3. Remove non-essential visual cues when not applicable</strong><br>
+          Color indicators for special pricing were removed when no pricing rules were applied.
+          <br>This ensures the interface reflects the actual system state, avoids unnecessary visual noise, and keeps users focused on their primary task—setting prices.</p>
+      </div>    
+    </section>
     
     <section class="block-a">
-      <h1 class="block-a-title">Challenge</h1>
+      <h1 class="block-a-title">Key Challenges</h1>
       <div class="block-a-content">
-        <p><strong>A. Handling Large Variations in Specific Dates</strong><br>
-          •  Specific dates vary widely—from 1–2 days for short events to 200+ days for year-round activities. The key design goal was to show all dates at a glance without clutter, while keeping pricing visible on the first screen.
-          <br>•  If "Specific Dates" must align with the original "Base Settings," pricing information can become confusing, requiring a review and redesign of the setting logic.</p>
-        <p><strong>B. Risk of Layout Breaks in Shared Components</strong><br>
-          The left-side "Special Pricing Menu" is a shared component. Known layout issues in multilingual contexts need to be considered.</p>
-        <p><strong>C. Complex Integration with Existing Setting Logic</strong><br>
-          The Design System's input error style may not be immediately visible or easily located within the "Price Settings" feature.</p>
+        <p><strong>A. Handling wide variations in date scale</strong><br>
+          Specific dates can range from a few days to over 200 days.
+          <br>This required a flexible layout that could scale without overwhelming users, while still keeping pricing information visible within the first viewport.</p>
+        <p><strong>B. Dependency on legacy configuration logic</strong><br>
+          The "Specific Dates" feature needed to align with existing base settings, which introduced constraints and potential confusion in pricing relationships.
+          <br>This required careful restructuring of the interaction flow to avoid conflicting logic.</p>
       </div>
     </section>
 
     <section class="block-a">
-      <h1 class="block-a-title">Cross-Functional Discovery</h1>
+      <h1 class="block-a-title">Cross-functional Collaboration</h1>
       <div class="block-a-content">
-        <p>Before the design phase, I organized a cross-functional kick-off session with key stakeholders to align on business priorities and proactively identify technical constraints.</p>
-        <p>Following the initial design, we held regular, small-group iterative reviews, where team members openly provided valuable insights to refine and advance the design collaboratively.</p><br>
+        <p>To align on business priorities and technical feasibility, I initiated a cross-functional kickoff with PMs and engineers early in the process.</p>
+        <p>This helped surface key constraints—such as system dependencies and component limitations—before design execution.</p>
+        <p>During the design phase, we conducted iterative reviews in small groups, enabling faster feedback loops and more informed design decisions.</p><br>
       </div>
     </section> 
 
@@ -184,12 +199,12 @@
       <h1 class="block-a-title">Design Principles</h1>
       <div class="block-a-content">
         <ol>
-          <li>Specific dates visible at a glance</li>
-          <li>Intuitive and no learning curve</li>
-          <li>Color distinction without confusion</li>
-          <li>Limited height to keep pricing visible below</li>
-          <li>Display only one special price at a time</li>
-          <li>Error checks must remain visible and not be blocked</li>
+          <li>Ensure all selected dates are visible at a glance</li>
+          <li>Keep interactions intuitive with no learning curve</li>
+          <li>Use color to differentiate without introducing ambiguity</li>
+          <li>Maintain a constrained layout height to preserve pricing visibility</li>
+          <li>Present only one pricing rule at a time to reduce complexity</li>
+          <li>Ensure validation and error states remain visible and actionables</li>
         </ol>
       </div>
     </section>
