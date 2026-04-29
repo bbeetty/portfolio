@@ -1,0 +1,208 @@
+/* ================================================================
+   AMBIENT VISUAL SYSTEM — index.html only
+   ================================================================ */
+
+/* Body transparent + relative so absolute ambient child can anchor to top */
+body.page-home {
+  background-color: transparent;
+  position: relative;
+}
+
+/* ── Ambient background layer ─────────────────────────────────── */
+/* position: absolute — scrolls with the page, only visible at the top */
+.site-ambient-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 130vh;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.ambient-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0;
+}
+
+/* Top-right: soft blue */
+.ambient-blob-1 {
+  width: min(680px, 65vw);
+  height: min(680px, 65vw);
+  top: -18vh;
+  right: -8vw;
+  background: radial-gradient(circle at center,
+    hsla(215, 88%, 78%, 0.52) 0%,
+    transparent 68%
+  );
+  animation:
+    ambient-fade-in 2s ease 0.1s forwards,
+    blob-drift-1 14s ease-in-out 2s infinite alternate;
+}
+
+/* Top-left: soft pink-purple */
+.ambient-blob-2 {
+  width: min(580px, 58vw);
+  height: min(580px, 58vw);
+  top: 4vh;
+  left: -9vw;
+  background: radial-gradient(circle at center,
+    hsla(310, 52%, 80%, 0.46) 0%,
+    transparent 68%
+  );
+  animation:
+    ambient-fade-in 2s ease 0.4s forwards,
+    blob-drift-2 18s ease-in-out 2.4s infinite alternate;
+}
+
+/* Center-upper: soft lavender */
+.ambient-blob-3 {
+  width: min(480px, 48vw);
+  height: min(480px, 48vw);
+  top: 22vh;
+  left: 38%;
+  background: radial-gradient(circle at center,
+    hsla(256, 52%, 82%, 0.38) 0%,
+    transparent 68%
+  );
+  animation:
+    ambient-fade-in 2s ease 0.7s forwards,
+    blob-drift-3 22s ease-in-out 2.7s infinite alternate;
+}
+
+/* Fade blobs out toward bottom of viewport — prevents hard bleed into works */
+.ambient-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50vh;
+  background: linear-gradient(to bottom, transparent 0%, #ffffff 100%);
+  pointer-events: none;
+}
+
+@keyframes ambient-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes blob-drift-1 {
+  from { transform: translate(0, 0)     scale(1); }
+  to   { transform: translate(72px, 52px) scale(1.12); }
+}
+
+@keyframes blob-drift-2 {
+  from { transform: translate(0, 0)       scale(1); }
+  to   { transform: translate(-62px, 68px) scale(1.09); }
+}
+
+@keyframes blob-drift-3 {
+  from { transform: translate(0, 0)      scale(1); }
+  to   { transform: translate(44px, -58px) scale(1.11); }
+}
+
+/* ── Cursor light ─────────────────────────────────────────────── */
+.cursor-light {
+  position: fixed;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1;
+  background: radial-gradient(circle at center,
+    rgba(255, 255, 255, 0.2) 0%,
+    transparent 65%
+  );
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  mix-blend-mode: overlay;
+}
+
+/* ── Header: frosted glass — homepage only ───────────────────── */
+.page-home .header {
+  background-color: rgba(255, 255, 255, 0.68);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* ── Hero: remove card-block look ────────────────────────────── */
+/* These override the border-radius + overflow in style.css */
+.page-home .hero {
+  border-radius: 0;
+  overflow: visible;
+}
+
+/* Smooth pass-through for JS-driven scroll fade */
+.hero-text-content {
+  will-change: opacity, transform;
+}
+
+/* ── Scroll reveal ────────────────────────────────────────────── */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity  0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger: featured projects */
+.featured-projects .reveal-item:nth-child(1) { transition-delay:   0ms; }
+.featured-projects .reveal-item:nth-child(2) { transition-delay:  80ms; }
+.featured-projects .reveal-item:nth-child(3) { transition-delay: 160ms; }
+.featured-projects .reveal-item:nth-child(4) { transition-delay: 240ms; }
+.featured-projects .reveal-item:nth-child(5) { transition-delay: 320ms; }
+
+/* Stagger: side project cards */
+.side-grid .reveal-item:nth-child(1) { transition-delay:   0ms; }
+.side-grid .reveal-item:nth-child(2) { transition-delay:  90ms; }
+.side-grid .reveal-item:nth-child(3) { transition-delay: 180ms; }
+
+/* ── Mobile ───────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .ambient-blob {
+    filter: blur(70px);
+  }
+  .ambient-blob-1 {
+    width: min(340px, 88vw);
+    height: min(340px, 88vw);
+    top: -8vh;
+    right: -6vw;
+  }
+  .ambient-blob-2 {
+    width: min(290px, 80vw);
+    height: min(290px, 80vw);
+    top: 6vh;
+    left: -5vw;
+  }
+  .ambient-blob-3 { display: none; }
+  .cursor-light   { display: none; }
+}
+
+/* ── Reduced motion ───────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .ambient-blob {
+    animation: ambient-fade-in 0.4s ease forwards !important;
+    /* blob-drift-* suppressed */
+  }
+  .reveal-item {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .hero-text-content {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .cursor-light { display: none !important; }
+}

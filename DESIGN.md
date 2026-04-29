@@ -462,6 +462,38 @@ When building a new case study page, apply the following per-project values:
 
 ---
 
+## Ambient Visual System (homepage only)
+
+Implemented in `ambient.css` + `ambient.js`. Only active when `<body class="page-home">` is present (index.html only). Other pages are unaffected.
+
+### Layers
+
+| Element | Position | z-index | Role |
+|---|---|---|---|
+| `.site-ambient-bg` | `fixed` | `-2` | Soft gradient blobs behind all content |
+| `.cursor-light` | `fixed` | `-1` | Mouse-follow radial glow (desktop only) |
+| `header`, `main`, `footer` | normal flow | auto | Content above ambient |
+
+### Blobs
+
+Three blobs (`ambient-blob-1/2/3`): top-right blue, top-left teal, center lavender. All `filter: blur(90px)`, drift on CSS keyframes (22–34s), fade in on load. The `.ambient-fade` div inside `site-ambient-bg` fades them to white at the viewport bottom, preventing bleed into the works section.
+
+### Scroll effects (ambient.js)
+
+- **Hero text fade**: `.hero-text-content` fades + rises as user scrolls past 15%–55% of hero height. rAF-throttled.
+- **Card reveal**: `.reveal-item` class triggers `is-visible` via Intersection Observer. Add to any element to opt in. Stagger delays set in CSS via `nth-child`.
+- **Cursor light**: 7% eased follow, desktop fine-pointer only, hidden on mobile.
+- **Floating image**: existing bounce animation, moved from inline script to `ambient.js`.
+
+### How to add scroll-reveal to new cards
+Add `class="reveal-item"` to the element. If it's inside `.featured-projects` or `.side-grid`, stagger is automatic. For other containers, add `nth-child` delay rules in `ambient.css`.
+
+### Reduced motion / mobile
+- `prefers-reduced-motion`: blobs appear instantly (no drift), reveal items shown immediately, cursor light hidden.
+- Mobile (≤ 768px): blob 3 hidden, blur reduced, cursor light hidden.
+
+---
+
 ## Adding a New Case Study Page
 
 1. Copy the HTML structure from an existing case study (e.g., `rezio_flexible_booking_date.html`).

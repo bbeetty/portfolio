@@ -24,9 +24,20 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="ambient.css">
 </head>
-<body>
+<body class="page-home">
   <img src="https://bbeetty.github.io/portfolio/img/og.png" style="display: none" />
+
+  <!-- Ambient visual system: fixed behind all content -->
+  <div class="site-ambient-bg" aria-hidden="true">
+    <div class="ambient-blob ambient-blob-1"></div>
+    <div class="ambient-blob ambient-blob-2"></div>
+    <div class="ambient-blob ambient-blob-3"></div>
+    <div class="ambient-fade"></div>
+  </div>
+  <div class="cursor-light" aria-hidden="true"></div>
+
   <!-- Header Navigation -->
   <header class="header">
     <div class="nav-container">
@@ -42,7 +53,7 @@
   </header>
 
   <!-- Main Content -->
-  <div class="main-content">
+  <main class="main-content">
     <section class="hero">
       <img src="img/floating.png" alt="floating object" class="floating-img">
       <div class="hero-content-wrapper">
@@ -80,7 +91,7 @@
         </div>
       </a>-->
            
-      <a class="project-link" href="rezio_flexible_booking_date.html">
+      <a class="project-link reveal-item" href="rezio_flexible_booking_date.html">
         <div class="project">
           <div class="project-text">
             <img src="img/rezio_logo.png" alt="rezio logo" class="project-logo">
@@ -99,7 +110,7 @@
         </div>
       </a>
 
-      <a class="project-link" href="astra_GoFace.html">
+      <a class="project-link reveal-item" href="astra_GoFace.html">
         <div class="project">
           <div class="project-text">
             <img src="img/Goface_logo.png" alt="Goface logo" class="project-logo">
@@ -118,7 +129,7 @@
         </div>
       </a>
 
-      <a class="project-link" href="dlink_mydlink_home_app.html">
+      <a class="project-link reveal-item" href="dlink_mydlink_home_app.html">
         <div class="project">
           <div class="project-text">
             <img src="img/mydlink_logo.png" alt="mydlink logo" class="project-logo">
@@ -136,7 +147,7 @@
         </div>
       </a>
 
-      <a class="project-link" href="dlink_router_web_gui.html">
+      <a class="project-link reveal-item" href="dlink_router_web_gui.html">
         <div class="project">
           <div class="project-text">
             <img src="img/dlink_logo.png" alt="D-Link logo" class="project-logo">
@@ -160,7 +171,7 @@
     <section class="side-projects">
       <div class="section-title">Side Projects</div>
       <div class="side-grid">
-        <a class="side-card" href="sidePJ_luckydraw.html">
+        <a class="side-card reveal-item" href="sidePJ_luckydraw.html">
           <video class="side-card-video" muted playsinline autoplay loop>
             <source src="img/luckydraw_demo.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -171,7 +182,7 @@
           </div>
         </a>
         
-        <div class="side-card coming-soon">
+        <div class="side-card coming-soon reveal-item">
           <div class="side-card-image-wrapper">
             <img src="img/SP_img2.png" alt="Vendor Interview">
             <div class="coming-soon-overlay">
@@ -184,7 +195,7 @@
           </div>
         </div>
         
-        <div class="side-card coming-soon">
+        <div class="side-card coming-soon reveal-item">
           <div class="side-card-image-wrapper">
             <img src="img/SP_img3.png" alt="Function Sharing">
             <div class="coming-soon-overlay">
@@ -198,7 +209,7 @@
         </div>
       </div>
     </section>
-  </div>
+  </main>
 
   <!-- Footer -->
   <footer class="footer">
@@ -231,98 +242,7 @@
   </footer>
 
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const img = document.querySelector(".floating-img");
-      const container = document.querySelector(".hero");
-      const hejElement = document.querySelector(".hero-hej");
-  
-      // 計算初始位置：從 Hej! 的中心位置出發
-      function getInitialPosition() {
-        if (hejElement && container) {
-          const containerRect = container.getBoundingClientRect();
-          const hejRect = hejElement.getBoundingClientRect();
-          
-          // 計算 Hej! 的中心位置相對於 container 的位置
-          const hejLeft = hejRect.left - containerRect.left;
-          const hejTop = hejRect.top - containerRect.top;
-          const hejCenterX = hejLeft + (hejRect.width / 2);
-          const hejCenterY = hejTop + (hejRect.height / 2);
-          
-          // 讓圖片從 Hej! 的中心位置開始，圖片中心對齊 Hej! 中心
-          const imgWidth = img.offsetWidth || 480;
-          const imgHeight = img.offsetHeight || 480;
-          let x = hejCenterX - (imgWidth / 2);
-          let y = hejCenterY - (imgHeight / 2);
-          
-          // 確保圖片在 hero-hej 範圍內
-          const hejRight = hejLeft + hejRect.width;
-          const hejBottom = hejTop + hejRect.height;
-          x = Math.max(hejLeft, Math.min(x, hejRight - imgWidth));
-          y = Math.max(hejTop, Math.min(y, hejBottom - imgHeight));
-          
-          return { x, y };
-        }
-        return { x: 50, y: 50 }; // fallback
-      }
-  
-      // 等待頁面渲染完成後再計算位置
-      setTimeout(() => {
-        if (!hejElement) return;
-        
-        const initialPos = getInitialPosition();
-        let x = initialPos.x;
-        let y = initialPos.y;
-        let rotation = 0; // 旋轉角度
-        
-        // 設置初始位置
-        img.style.transform = `translate(${x}px, ${y}px) rotate(${rotation}deg)`;
-  
-      // 移動速度（越小越慢，越大越快）
-      let vx = 0.6;
-      let vy = 0.2;
-        const rotationSpeed = 0.5; // 旋轉速度（度/幀）
-  
-      function animate() {
-          // 使用 hero-hej 的邊界作為活動範圍
-          const containerRect = container.getBoundingClientRect();
-          const hejRect = hejElement.getBoundingClientRect();
-          
-          // 計算 hero-hej 相對於 hero 的位置
-          const hejLeft = hejRect.left - containerRect.left;
-          const hejTop = hejRect.top - containerRect.top;
-          const hejRight = hejLeft + hejRect.width;
-          const hejBottom = hejTop + hejRect.height;
-          
-        const w = img.offsetWidth;
-        const h = img.offsetHeight;
-  
-        x += vx;
-        y += vy;
-          rotation += rotationSpeed; // 持續旋轉
-  
-          // 撞左右反彈（限制在 hero-hej 範圍內）
-          if (x < hejLeft || x + w > hejRight) {
-          vx = -vx;
-            // 確保不會超出邊界
-            x = Math.max(hejLeft, Math.min(x, hejRight - w));
-        }
-  
-          // 撞上下反彈（限制在 hero-hej 範圍內）
-          if (y < hejTop || y + h > hejBottom) {
-          vy = -vy;
-            // 確保不會超出邊界
-            y = Math.max(hejTop, Math.min(y, hejBottom - h));
-        }
-  
-          img.style.transform = `translate(${x}px, ${y}px) rotate(${rotation}deg)`;
-        requestAnimationFrame(animate);
-      }
-  
-      animate();
-      }, 100);
-    });
-  </script>
+  <script src="ambient.js"></script>
   
 </body>
 </html>
