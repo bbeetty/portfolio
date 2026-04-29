@@ -60,6 +60,14 @@
     }, { passive: true });
   }
 
+  // ── Pause crossfade when floating-visual scrolls out of view ──
+  var floatingAlt = document.querySelector('.floating-alt');
+  if (floatingAlt && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      floatingAlt.style.animationPlayState = entries[0].isIntersecting ? 'running' : 'paused';
+    }, { threshold: 0 }).observe(floatingAlt);
+  }
+
   // ── Pause blob drift when ambient bg scrolls out of view ─────
   var ambientBg = document.querySelector('.site-ambient-bg');
   if (ambientBg && !reducedMotion && 'IntersectionObserver' in window) {
@@ -98,7 +106,7 @@
   }
 
   // ── Floating image bounce (moved from inline script) ─────────
-  var floatImg  = document.querySelector('.floating-img');
+  var floatImg  = document.querySelector('.floating-visual');
   var heroEl    = document.querySelector('.hero');
   var hejEl     = document.querySelector('.hero-hej');
 

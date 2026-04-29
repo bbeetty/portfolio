@@ -88,17 +88,48 @@ a {
   overflow: hidden; /* 讓飄動圖片維持在區塊內 */
 }
 
-/* 飄動 PNG */
-.floating-img {
+/* 飄動 PNG — group container (JS bounce target) */
+.floating-visual {
   position: absolute;
-  width: 480px; /* 你可以改大小 */
+  width: 480px;
   top: 0;
   left: 0;
-  opacity: 0.8; /* 建議淡淡的比較不搶戲 */
+  opacity: 0.8;
   pointer-events: none;
   user-select: none;
   transform: translate(0, 0);
-  z-index: 1; /* 在 Hej! 文字下方，作為底色 */
+  z-index: 1;
+}
+
+/* base image: in normal flow so it defines the container height */
+.floating-base {
+  display: block;
+  width: 100%;
+  height: auto;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* alt image: overlays base exactly, crossfades in/out via CSS */
+.floating-alt {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  display: block;
+  user-select: none;
+  pointer-events: none;
+  opacity: 0;
+  animation: float-crossfade 10s ease-in-out infinite;
+}
+
+@keyframes float-crossfade {
+  0%   { opacity: 0; }   /* floating.png visible */
+  20%  { opacity: 1; }   /* 1 s fade in  */
+  50%  { opacity: 1; }   /* 1.5 s hold   */
+  70%  { opacity: 0; }   /* 1 s fade out */
+  100% { opacity: 0; }   /* 1.5 s hold   */
 }
 
 .hero-background-image {
@@ -510,8 +541,9 @@ a {
     min-height: 150px;
   }
 
-  .floating-img {
-    width: 288px; /* 480px * 60% = 288px */
+  .floating-img,
+  .floating-visual {
+    width: 288px;
   }
 
   .hero h1,
