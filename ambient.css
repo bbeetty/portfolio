@@ -168,6 +168,21 @@ body.page-home {
 .side-grid .reveal-item:nth-child(2) { transition-delay:  90ms; }
 .side-grid .reveal-item:nth-child(3) { transition-delay: 180ms; }
 
+/* ── Floating visual: subtle hue-shift glow ─────────────────── */
+/* Animates filter only — JS handles transform (bounce/rotation). */
+/* 18 s is intentionally out-of-sync with 24 s crossfade cycle.  */
+.page-home .floating-visual {
+  animation: float-hue-shift 18s ease-in-out infinite;
+}
+
+@keyframes float-hue-shift {
+  0%   { filter: hue-rotate(  0deg) saturate(1.00) brightness(1.00); }
+  25%  { filter: hue-rotate(  3deg) saturate(1.05) brightness(1.02); }
+  50%  { filter: hue-rotate( -2deg) saturate(1.08) brightness(1.04); }
+  75%  { filter: hue-rotate(  4deg) saturate(1.04) brightness(1.01); }
+  100% { filter: hue-rotate(  0deg) saturate(1.00) brightness(1.00); }
+}
+
 /* ── Hero text entry ─────────────────────────────────────────── */
 /* Lines start invisible; each enters in sequence on page load.   */
 /* animation-fill-mode: both → initial keyframe applies during    */
@@ -243,4 +258,6 @@ body.page-home {
   .hero-line-2,
   .hero-line-3 { opacity: 1 !important; transform: none !important; animation: none !important; }
   .hero-type-text { clip-path: none !important; animation: none !important; }
+  .page-home .floating-visual { animation: none !important; filter: none !important; }
+  .floating-alt, .floating-alt-3 { animation: none !important; }
 }

@@ -61,11 +61,12 @@
   }
 
   // ── Pause crossfade when floating-visual scrolls out of view ──
-  var floatingAlt = document.querySelector('.floating-alt');
-  if (floatingAlt && 'IntersectionObserver' in window) {
+  var floatingAlts = document.querySelectorAll('.floating-alt, .floating-alt-3');
+  if (floatingAlts.length && 'IntersectionObserver' in window) {
     new IntersectionObserver(function (entries) {
-      floatingAlt.style.animationPlayState = entries[0].isIntersecting ? 'running' : 'paused';
-    }, { threshold: 0 }).observe(floatingAlt);
+      var state = entries[0].isIntersecting ? 'running' : 'paused';
+      floatingAlts.forEach(function (el) { el.style.animationPlayState = state; });
+    }, { threshold: 0 }).observe(floatingAlts[0]);
   }
 
   // ── Pause blob drift when ambient bg scrolls out of view ─────

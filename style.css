@@ -111,7 +111,9 @@ a {
 }
 
 /* alt image: overlays base exactly, crossfades in/out via CSS */
-.floating-alt {
+/* Shared layout for all overlay layers */
+.floating-alt,
+.floating-alt-3 {
   position: absolute;
   top: 0;
   left: 0;
@@ -121,15 +123,31 @@ a {
   user-select: none;
   pointer-events: none;
   opacity: 0;
-  animation: float-crossfade 10s ease-in-out infinite;
 }
 
-@keyframes float-crossfade {
-  0%   { opacity: 0; }   /* floating.png visible */
-  20%  { opacity: 1; }   /* 1 s fade in  */
-  50%  { opacity: 1; }   /* 1.5 s hold   */
-  70%  { opacity: 0; }   /* 1 s fade out */
-  100% { opacity: 0; }   /* 1.5 s hold   */
+/* Image 2 — active at 7 s–17 s of the 24 s cycle */
+.floating-alt {
+  animation: float-crossfade-2 24s ease-in-out infinite;
+}
+
+/* Image 3 — active at 15 s–24 s of the 24 s cycle */
+.floating-alt-3 {
+  animation: float-crossfade-3 24s ease-in-out infinite;
+}
+
+@keyframes float-crossfade-2 {
+  0%, 29% { opacity: 0; }   /* 0 s–7 s: img 1 visible          */
+  38%     { opacity: 1; }   /* 9 s: img 2 fully in             */
+  63%     { opacity: 1; }   /* 15 s: start crossfade to img 3  */
+  71%     { opacity: 0; }   /* 17 s: img 2 gone                */
+  100%    { opacity: 0; }
+}
+
+@keyframes float-crossfade-3 {
+  0%, 63% { opacity: 0; }   /* 0 s–15 s: invisible             */
+  71%     { opacity: 1; }   /* 17 s: img 3 fully in            */
+  92%     { opacity: 1; }   /* 22 s: start fade to img 1       */
+  100%    { opacity: 0; }   /* 24 s: img 3 gone, img 1 shows   */
 }
 
 .hero-background-image {
