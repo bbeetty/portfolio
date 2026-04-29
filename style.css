@@ -60,7 +60,7 @@ a {
 }
 
 .nav-links a {
-  color: #A1A1A1;
+  color: #AAAAAA;
   font-size: 16px;
   transition: color 0.3s ease;
 }
@@ -180,7 +180,7 @@ a {
 
 /* Section Titles */
 .section-title {
-  font-size: 0.85rem;
+  font-size: 1.25rem;
   font-weight: 600;
   color: #808080;
   text-transform: uppercase;
@@ -390,7 +390,7 @@ a {
 
 .side-card .tag {
   font-size: 0.8rem;
-  color: #888888;
+  color: #808080;
 }
 
 /* Footer */
@@ -422,7 +422,7 @@ a {
 
 .footer-left .copyright {
   font-size: 0.9rem;
-  color: #888888;
+  color: #808080;
 }
 
 .footer-right {
@@ -432,9 +432,9 @@ a {
 }
 
 .footer-section h4 {
-  font-size: 0.85rem;
+  font-size: 1.25rem;
   font-weight: 600;
-  color: #888888;
+  color: #808080;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 15px;
