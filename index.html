@@ -25,6 +25,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="ambient.css">
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 
 <body class="page-home">
@@ -64,11 +65,15 @@
       </div>
       <div class="hero-content-wrapper">
         <div class="hero-text-content">
-          <h1 class="hero-line hero-line-1">
-            <span class="hero-type-text">Hello, I'm Betty Chen.</span>
+          <h1 data-typeseq="0" data-text="Hello, I'm Betty Chen.">
+            <span class="typing-text"></span>
+            <noscript>Hello, I'm Betty Chen.</noscript>
           </h1>
-          <div class="subtitle hero-line hero-line-2">Product Designer</div>
-          <p class="description hero-line hero-line-3">
+          <div class="subtitle" data-typeseq="1" data-text="Product Designer">
+            <span class="typing-text"></span>
+            <noscript>Product Designer</noscript>
+          </div>
+          <p class="description hero-fade-late">
             I design across IoT, SaaS, and hardware–software systems, simplifying complexity to drive impact.
           </p>
         </div>
@@ -258,6 +263,7 @@
 
 
   <script src="ambient.js"></script>
+  <script src="typing.js"></script>
 
 </body>
 

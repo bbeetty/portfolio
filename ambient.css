@@ -183,40 +183,6 @@ body.page-home {
   100% { filter: hue-rotate(  0deg) saturate(1.00) brightness(1.00); }
 }
 
-/* ── Hero text entry ─────────────────────────────────────────── */
-/* Lines start invisible; each enters in sequence on page load.   */
-/* animation-fill-mode: both → initial keyframe applies during    */
-/* the delay so there's no flash before the animation starts.     */
-
-.hero-line-1 {
-  animation: hero-fade-up 0.60s cubic-bezier(0.22, 1, 0.36, 1) 0.10s both;
-}
-
-/* clip-path sweeps left→right, simulating a smooth type-in */
-.hero-type-text {
-  display: inline-block;
-  clip-path: inset(0 100% 0 0);
-  animation: hero-type-reveal 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.10s both;
-}
-
-.hero-line-2 {
-  animation: hero-fade-up 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.50s both;
-}
-
-.hero-line-3 {
-  animation: hero-fade-up 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.75s both;
-}
-
-@keyframes hero-type-reveal {
-  from { clip-path: inset(0 100% 0 0); }
-  to   { clip-path: inset(0   0% 0 0); }
-}
-
-@keyframes hero-fade-up {
-  from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: translateY(0);    }
-}
-
 /* ── Mobile ───────────────────────────────────────────────────── */
 @media (max-width: 768px) {
   .ambient-blob {
@@ -254,10 +220,8 @@ body.page-home {
     transform: none !important;
   }
   .cursor-light { display: none !important; }
-  .hero-line-1,
-  .hero-line-2,
-  .hero-line-3 { opacity: 1 !important; transform: none !important; animation: none !important; }
-  .hero-type-text { clip-path: none !important; animation: none !important; }
+  .typing-cursor { animation: none !important; }
+  .hero-fade-late { transition: none !important; }
   .page-home .floating-visual { animation: none !important; filter: none !important; }
   .floating-alt, .floating-alt-3 { animation: none !important; }
 }

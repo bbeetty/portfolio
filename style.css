@@ -227,6 +227,48 @@ a {
   line-height: 1.7;
 }
 
+/* ── Typing effect ───────────────────────────────────────────── */
+/* Hide targets until JS initialises; prevents FOUC */
+.js [data-typeseq],
+.js [data-typing] {
+  visibility: hidden;
+}
+
+.js [data-typeseq].typing-active,
+.js [data-typing].typing-active {
+  visibility: visible;
+}
+
+.typing-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 0.85em;
+  background: currentColor;
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  animation: cursor-blink 0.65s step-end infinite;
+  transition: opacity 0.4s ease;
+}
+
+@keyframes cursor-blink {
+  from, to { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* Description line: hidden until typing sequence completes */
+.hero-fade-late {
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity  0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero-fade-late.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Section Titles */
 .section-title {
   font-size: 1.25rem;

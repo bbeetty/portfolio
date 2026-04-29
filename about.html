@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="page-style.css">
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
   <!-- Header Navigation -->
@@ -33,7 +34,10 @@
         <div class="block-b-content">
             <div class="image-caption-container col-2">
               <div class="image-caption-item">
-                <div class="subtitle">I'm Betty - A believer in the impossible, passionate about bringing people together.</div>
+                <div class="subtitle" data-typing data-text="I'm Betty - A believer in the impossible, passionate about bringing people together.">
+                  <span class="typing-text"></span><span class="typing-cursor" aria-hidden="true"></span>
+                  <noscript>I'm Betty - A believer in the impossible, passionate about bringing people together.</noscript>
+                </div>
                 A Passionate Product Designer & Collaborative Problem Solver!<br>
                 I am driven by the power of design to unite people and meaningfully improve lives. I excel at solving complex problems through thoughtful design, integrating diverse insights to find common ground and shared solutions—from high-level strategy to refining the final user experience.<br>
                 My professional journey spans across various sectors, including R&D, Tech, Travel, Marketing, and Exhibition Design, where I consistently embrace new challenges. I draw inspiration from actively listening to people and sharing their passions.<br>
@@ -75,5 +79,6 @@
       </div>
     </div>
   </footer>
+  <script src="typing.js"></script>
 </body>
 </html>
